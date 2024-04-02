@@ -6,7 +6,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 * Caio De Moro Abjaud
 * Bernardo Amaral Muruays
-* Nome completo do aluno 3
+* Gustavo Lucas Martins
 * Nome completo do aluno 4
 
 ## Professores responsáveis
