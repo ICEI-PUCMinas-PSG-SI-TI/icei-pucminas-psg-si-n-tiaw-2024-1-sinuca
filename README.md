@@ -8,7 +8,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 * Bernardo Amaral Muruays
 * Gustavo Lucas Martins
 * Guilherme Henrique Fernandes
-* Nome completo do aluno 5
+* Gabriel Fernandes Duque dos Santos
 
 ## Professores responsáveis
 
