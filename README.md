@@ -9,6 +9,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 * Gustavo Lucas Martins
 * Guilherme Henrique Fernandes
 * Gabriel Fernandes Duque dos Santos
+* Bruno Caixeta Figueiredo
 
 ## Professores responsáveis
 
