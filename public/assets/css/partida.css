@@ -1,0 +1,43 @@
+/*MAPA*/
+
+h2{
+    text-align: center;
+    background-color:  #06945C;
+    padding: 10px;
+    border-radius: 15px;
+}
+.map-box{
+    background-color: #00603A;
+    padding: 15px;
+    height: 60vh;
+    border-radius: 15px;
+}
+.mapa{
+    width: 100%;
+    height: 100%;
+}
+
+.detalhes{
+    background-color: #00603A;
+    padding: 20px;
+    border-radius: 15px;
+}
+.detalhes ul li{
+    background-color: #06945C;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+.btnParticipar{
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    color: white;
+    background: #002552;
+}
+
+.btnParticipar:hover{
+    opacity: 0.8;
+}
+
+
