@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacada Certa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/tutorial.css">
+    
+
+</head>
+
+<body>
+
+    <!-- CABECALHO DA PÁGINA -->
+    <header>
+        <nav>
+            <a href="/index.html" class="logo"><img src="/assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#" style="color: #fff; text-decoration:none">Perfil</a></li>
+                <li><a href="#" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
+                <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+                <li><a href="/tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
+                <li><a href="/saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
+                <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+                <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CABECALHO DA PÁGINA -->
+
+    <!-- ABAS DE TUTORIAL -->
+
+
+
+    <div class="container-fluid">
+        <div class="row" id="abas">
+
+            <div class="col-lg-4 px-5 my-4">
+                <div id="aprende" class="pb-3">
+                    <div class="py-5 d-flex justify-content-center" id="aprendaajogar">
+                        <h2>Aprenda a Jogar</h2>
+                    </div>
+                    <a href="#contentRegras" id="aba1js">
+                    
+                        <div class="py-4 m-4 d-flex justify-content-center" id="regras1">
+                            <h3>Regras</h3>
+                        </div>
+                    </a>
+                    <a href="#contentDefinicoes" id="aba2js">
+                        <div class="py-4 m-4 d-flex justify-content-center" id="regras2">
+                            <h3>Definições</h3>
+                        </div>
+                    </a>
+                    <a href="#contentTecnicas" id="aba3js">
+                        <div class="py-4 m-4 d-flex justify-content-center" id="regras3">
+                            <h3>Técnicas</h3>
+                        </div>
+                    </a>
+                    <a href="#contentEstrategias" id="aba4js">
+                        <div class="py-4 m-4 d-flex justify-content-center" id="regras4">
+                            <h3>Estratégias</h3>
+                        </div>
+                    </a>
+                    <a href="#contentDicas" id="aba5js">
+                        <div class="py-4 m-4 d-flex justify-content-center" id="regras5">
+                            <h3>Dicas</h3>
+                        </div>
+                    </a>
+                    
+                </div>
+
+            </div>
+            <!-- ABAS DE TUTORIAL -->
+
+            <!-- CONTEUDO TUTORIAL -->
+            <div class="col-lg-8 px-5">
+                <div id="tutorialContent" class="pb-5">
+                    <div class="py-5 mt-4 mx-5 d-flex justify-content-center">
+                        <div id="imgTutorial" class="p-3">
+                            <img src="/assets/images/bolasinuca2.png" class="img-fluid" width="800px" alt="">
+                        </div>
+                    </div>
+                    <div id="apresentTutorial" class="mx-5 p-4">
+                        <h1 class="d-flex justify-content-center mb-5" id="tutorialTexto">QUER APRENDER A
+                            JOGAR SINUCA?</h1>
+                        <h2 id="tutorialTexto" class="text-center">
+
+                            Disponibilizamos uma
+                            série de aulas para te ensinar a jogar
+
+
+                            aquela sinuquinha com seus amigos!
+
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTEUDO TUTORIAL -->
+
+
+    <!-- CONTEUDO TUTORIAL - REGRAS -->
+    <div class="mx-5 d-none" id="contentRegras">
+        <div>
+            <div class="mx-5 p-3 text-center">
+                <div id="textoRegras1" class="p-3">
+                    <h1>Quais as regras da sinuca brasileira?</h1>
+                    <p>As regras da sinuca brasileira não são mais utilizadas em campeonatos oficiais no Brasil desde
+                        1996.
+                        Entretanto, por ainda ser praticada por muitos jogadores, é interessante entender os pontos
+                        principais,
+                        que estão descritos abaixo.</p>
+
+
+
+                    <p>
+                    <h5>Materiais necessários para jogar sinuca brasileira
+                        Para jogar sinuca brasileira é necessário os seguintes itens:</h5>
+                    </p>
+
+                    <p> Mesa com campo de jogo de 2,84 m por 1,42 m
+                    <p>
+                        8 bolas, sendo uma branca usada como tacadeira e 7 coloridas, com valores distintos: vermelha
+                        (1),
+                        amarela (2), verde (3), marrom (4), azul (5), rosa (6) e a preta (7)</p>
+                    Um taco de sua preferência.</p>
+
+                    <hr id="hrRegras">
+
+                    <h1>Como montar a mesa corretamente?</h1>
+
+                    <p>
+                        Para dar início à partida, as bolas devem ser posicionadas em um alinhamento específico. Dê um
+                        espaço da tabela 6 e posicione a bola marrom de maneira centralizada, depois, sempre respeitando
+                        um espaço entre as bolas, coloque a azul, a rosa e preta na mesma direção da marrom, formando
+                        uma linha por todo o comprimento da mesa.
+                    </p>
+                    <p>
+                        A bola verde e a amarela devem ficar paralelas à marrom, formando outra linha. Já a bola
+                        vermelha é posicionada paralela à bola rosa. Lembre-se sempre de respeitar uma distância de mais
+                        ou menos 30 centímetros.
+                    </p>
+                    <p>
+                        Por fim, a bola branca é colocada entre as bolas amarela e marrom para dar início à partida.
+                    </p>
+
+                    <hr id="hrRegras">
+
+                    <h1>Regras básicas de jogadas e pontuação</h1>
+
+                    <p>
+                        A partida pode ser disputada entre 2 ou mais jogadores. Para definir quem dará início a disputa
+                        é preciso fazer um sorteio utilizando o método escolhido pelos participantes.
+                    </p>
+
+                    <p>
+                        Durante o jogo é feito a soma dos pontos correspondentes às bolas encaçapadas por cada jogador,
+                        de forma que quem fizer mais pontos vencerá a partida.
+                    </p>
+
+                    <p>
+                        As bolas devem ser encaçapadas em uma sequência crescente. Entretanto, o jogador pode tentar
+                        encaçapar uma bola de maior valor para aumentar a sua pontuação, mas nesse caso haverá uma
+                        punição se ele não conseguir. De forma geral, há alguns pontos cruciais para entender a dinâmica
+                        do início e do decorrer do jogo:
+                    </p>
+
+                    <h3>Tacada inicial</h3>
+                    <p>
+                        Na tacada inicial o jogador visa a bola de menor valor, sendo a vermelha número 1. Entretanto, é
+                        proibido encaçapá-la ou colocar o adversário em uma situação de sinuca, quando há outra bola
+                        entre a branca e a bola alvo. Caso ocorra alguma dessas situações, o jogador deverá repetir a
+                        tacada.0
+                    </p>
+                    <br>
+                    <h3>Primeiros pontos</h3>
+                    <p>
+                        Se no início o jogador optar por encaçapar uma bola fora da sequência, ele deverá
+                        obrigatoriamente encaçapar a bola sequencial na próxima jogada.
+                    </p>
+                    <br>
+                    <h3>
+                        Sequência de tacadas
+                    </h3>
+                    <p>
+                        Ao optar por uma bola fora da sequência e encaçapá-la, a bola retornará à mesa e o jogador
+                        poderá arrematar novamente fora da sequência. Ao encaçapar duas vezes a mesma bola, ela não
+                        retornará e a próxima tacada deverá obrigatoriamente seguir a sequência numérica.
+                    </p>
+                    <br>
+                    <h3>Bola da vez</h3>
+                    <p>
+                        Quando a bola numerada é encaçapada de forma lícita e em seu momento da sequência, ela não
+                        retornará ao campo de jogo, a não ser quando a última bola encaçapada foi a de número
+                        imediatamente inferior.
+                    </p>
+                    <br>
+                    <h3>Retorno das bolas</h3>
+                    <p>
+                        A bola retorna para o seu ponto de origem na mesa. Caso ele esteja ocupado, ela ficará no
+                        chamado ponto morto, próximo à tabela 6.
+                    </p>
+                    <br>
+                    <h3>Jogada cantada</h3>
+                    <p>
+                        Era obrigatório que o jogador, antes de dar a tacada, falasse em voz alta o que iria acontecer
+                        com a bola, exceto nas situações em que suas intenções eram extremamente óbvias. Entretanto,
+                        desde 2012, a CBBS atualizou a regra e retirou esta obrigatoriedade.
+                    </p>
+
+                    <hr id="hrRegras">
+                    <h1>Fim da partida</h1>
+                    <p>
+                        O jogador será considerado vencedor em qualquer um dos casos abaixo:
+                    </p>
+
+                    <li>Arrematar a bola 7 com vantagem no placar</li>
+                    <li>Arrematar a bola 6 com vantagem superior a 7 pontos</li>
+                    <li>O jogador tem mais de 46 pontos de vantagem, sendo que a bola da vez é a 5</li>
+                    <li>O jogador tem mais de 27 pontos de vantagens, com a bola 6 sendo a da vez</li>
+                    <li>Um dos participantes desiste do confronto e reconhece a derrota</li>
+                    <hr id="hrRegras">
+
+                    <h1>Desempate</h1>
+                    <p>
+                        Há situações em que, após todas as bolas serem arrematadas, os jogadores atingem a mesma
+                        pontuação. Neste caso, a bola 7 retorna a mesa e quem encaçapá-la primeiro ganha.
+                    </p>
+                    <p>
+                        Será feito um sorteio para definir quem dará a primeira tacada e não é permitido arrematar a
+                        bola preta no primeiro movimento.
+                    </p>
+                    <br>
+                    <h3>Faltas e penalidades no jogo de sinuca brasileira</h3>
+                    <p>
+                        As regras da sinuca brasileira dizem que as faltas serão punidas com a perda de 7 pontos. Por
+                        isso, os jogadores devem ficar muito atentos a diversas coisas que não podem fazer durante a
+                        partida:
+                    </p>
+                    <li>Tentar arrematar uma bola que não é a da vez e errar</li>
+                    <li>Encaçapar a bola branca</li>
+                    <li>Mandar uma bola para fora da mesa</li>
+                    <li>Dar dois toques em uma bola</li>
+                    <li>Encostar em uma bola que não faz parte da jogada, seja com o taco, a mão ou a roupa</li>
+                    <li>Converter mais de uma bola com uma única tacada</li>
+                    <li>Cometer faltas disciplinares</li>
+                    <br>
+                    <p>
+                        Além disso, o jogador penalizado perde direito à tacada. Mas o jogador beneficiado tem o direito
+                        de passar a vez para o adversário, sem que ele tenha a possibilidade de recusar.
+                    </p>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+ <!-- CONTEUDO TUTORIAL - REGRAS -->
+
+
+
+  <!-- CONTEUDO TUTORIAL - DEFINIÇÕES -->
+    <div class="mx-5 d-none" id="contentDefinicoes">
+        <div>
+            <div class="mx-5 p-3 text-center">
+                <div id="textoDefinicoes1" class="p-3">
+                   <h1>Sinuca</h1>
+                   <p>
+                    O termo "sinuca" geralmente se refere ao jogo de bilhar praticado em uma mesa específica, mas também pode ser usado informalmente para descrever qualquer jogo de bilhar.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Bilhar</h1>
+                   <p>
+                    Bilhar é o termo amplo para uma variedade de jogos jogados em uma mesa de bilhar com tacos e bolas. A sinuca é uma das variações do bilhar.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Taco</h1>
+                   <p>
+                    É o instrumento usado para atingir as bolas na mesa. Os tacos podem variar em comprimento, peso e material.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Tacada</h1>
+                   <p>
+                    Refere-se ao movimento executado por um jogador ao atingir a bola branca com o taco, com o objetivo de acertar outras bolas na mesa.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Bola de Segurança</h1>
+                   <p>
+                    Uma estratégia em que um jogador tenta deixar a bola branca em uma posição defensiva após sua tacada, tornando difícil para o adversário fazer uma jogada vantajosa.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Bola da Vez</h1>
+                   <p>
+                    Refere-se à bola que um jogador está tentando acertar em uma determinada tacada, seja para marcar pontos ou para executar uma jogada estratégica.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Bola Dura e Bola Fácil</h1>
+                   <p>
+                    Termos usados para descrever a dificuldade relativa de acertar uma determinada bola em uma jogada, com a "bola dura" sendo mais difícil e a "bola fácil" sendo mais acessível.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Jogada de Combinação</h1>
+                   <p>
+                    Uma jogada em que um jogador usa a bola branca para acertar outra bola, que então atinge a bola alvo desejada.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Jogo de Dama</h1>
+                   <p>
+                    Uma situação onde duas bolas estão próximas o suficiente para que seja possível realizar uma jogada de forma a encostar uma na outra, criando uma defesa eficaz ou uma posição estratégica.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Bola de Reserva</h1>
+                   <p>
+                    Em algumas modalidades, como no snooker, refere-se à bola colorida mais baixa que deve ser encaçapada após todas as bolas vermelhas terem sido removidas da mesa.
+                   </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+      <!-- CONTEUDO TUTORIAL - DEFINIÇÕES -->
+
+
+
+
+  <!-- CONTEUDO TUTORIAL - TÉCNICAS -->
+    <div class="mx-5 d-none" id="contentTecnicas">
+        <div>
+            <div class="mx-5 p-3 text-center">
+                <div id="textoTecnicas1" class="p-3">
+                   <h1>Posicionamento da Bola Branca</h1>
+                   <p>
+                    Uma técnica fundamental é controlar a posição da bola branca após cada tacada. Isso envolve calcular a força e a direção da tacada para posicionar a bola branca em uma posição estratégica para a próxima jogada.
+                   </p>
+                   <hr id="hrRegras">
+
+                   <h1>Efeito</h1>
+                   <p>
+                    Adicionar efeito à bola branca pode alterar sua trajetória após o contato com outra bola. Os efeitos comuns incluem o efeito de rotação (topspin ou backspin) e o efeito lateral (efeito de inglês), que podem ser usados para controlar o movimento da bola branca após o contato.
+                   </p>
+                   <hr id="hrRegras">
+
+                   <h1>Tacada de Segurança</h1>
+                   <p>
+                    Em situações onde não é possível fazer uma jogada ofensiva, os jogadores muitas vezes optam por uma tacada de segurança. Isso envolve deixar a bola branca em uma posição defensiva, tornando difícil para o adversário fazer uma jogada vantajosa.
+                   </p>
+                   <hr id="hrRegras">
+
+                   <h1>Tacada de posição</h1>
+                   <p>
+                    Uma tacada de posição é aquela em que o jogador tenta posicionar a bola branca em uma posição estratégica para a próxima jogada. Isso pode envolver o uso de bancos (tacadas nas bordas da mesa) ou paradas (tacadas para parar a bola branca em uma determinada posição).
+                   </p>
+                   <hr id="hrRegras">
+
+                   <h1>Banco</h1>
+                   <p>
+                    Uma técnica importante é dominar os ângulos de banco, onde a bola branca é atingida em uma borda da mesa para que ela quique e atinja outra bola em um ângulo específico
+                   </p>
+                   <hr id="hrRegras">
+
+                   <h1>Jogadas de Segurança</h1>
+                   <p>
+                    Em algumas situações, é preferível optar por uma jogada defensiva em vez de uma jogada arriscada de ataque. Isso pode envolver esconder a bola branca atrás de outras bolas ou deixá-la em uma posição onde seja difícil para o adversário fazer uma tacada vantajosa
+                   </p>
+                   <hr id="hrRegras">
+
+                   
+                   <h1>Controle de Força</h1>
+                   <p>
+                    Controlar a força da tacada é fundamental para garantir precisão e posicionamento adequado da bola branca. Isso requer prática para desenvolver uma sensibilidade para a quantidade de força necessária em diferentes situações.
+                   </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  <!-- CONTEUDO TUTORIAL - TÉCNICAS -->
+
+
+
+
+
+
+    <!-- CONTEUDO TUTORIAL - ESTRATÉGIAS -->
+    <div class="mx-5 d-none" id="contentEstrategias">
+        <div>
+            <div class="mx-5 p-3 text-center">
+                <div id="textoEstrategias1" class="p-3">
+                   <h1>Posicionamento</h1>
+                   <p>
+                    Um bom posicionamento é essencial para um bom jogo. Ok, você possivelmente vai conseguir acertar tacadas e até ganhar partidas sem ao menos se importar com este fator, porém será muito mais fácil se você se atentar a isso desde o começo, fazendo a “postura de jogador” ser natural na hora da partida.
+                   </p>
+                   <br>
+                   <h3>Posicionamento do corpo</h3>
+                   <p>
+                    Com o posicionamento correto do corpo você consegue, por exemplo, ter uma mira melhor, tornando assim, mais altas as chances de você encaçapar a bola.
+                   </p>
+                   <p>
+                    Neste caso, o posicionamento ideal seria colocar o pé direito (se você for destro(a) e pé esquerdo se for canhoto (a) na direção da linha de tacada (onde você precisa abaixar para realizar a tacada com uma boa mira) deixando ele mais a frente do corpo e a perna será levemente flexionada, o pé oposto fica mais atrás e a perna mantém-se reta.
+                   </p>
+                   <p>
+                    Após ajustado o corpo o mais próximo do ideal, seguimos com o ajuste do posicionamento do braço, onde o cotovelo fica num ângulo próximo a 90º e assim posicionado, o cotovelo não mexe mais, apenas o antebraço faz os movimentos da tacada.
+                   </p>
+                   <p>
+                    Um bom posicionamento pode ajudar, ainda, a ter um bom equilíbrio durante as jogadas, ajuda na sua postura e a evitar lesões (raras, mas que podem acontecer) durante a partida.
+                   </p>
+                   <br>
+                   <h3>Posicionamento da mão</h3>
+                   <p>
+                    Aqui, utiliza-se a mão contrária à dominante como um apoio para o taco de sinuca, dando assim mais firmeza e precisão na tacada. Com a mão aberta, formando uma ponte na mesa, onde o taco será apoiado no “vão” entre o polegar e o indicador ou enlaçado pelo polegar e o indicador.
+                   </p>
+                   <hr id="hrRegras">                
+                   <h1>Use o giz</h1>
+                   <p>
+                    Para não errar na sinuca você sempre deve usar o giz. Este material ajuda a polir a ponta do taco, garantindo que ela fique uniforme. Pois, se houver irregularidades, o taco pode “espirrar”, fazendo com que a bola se movimente de uma forma totalmente inesperada.
+                   </p>
+                   <p>
+                    Alguns iniciantes podem pensar que o uso constante do giz é uma simples mania dos praticantes de sinuca, mas ao jogar com mais frequência, você vai perceber que o giz faz toda a diferença.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Utilize as tabelas</h1>
+                   <p>
+                    Saber utilizar as tabelas é uma das habilidades necessárias para jogar sinuca com qualidade. Pois, em algum momento, você terá que fazer com que a bola acerte as laterais da mesa de sinuca para sair de uma situação difícil.
+                   </p>
+                   <p>
+                    Tente imaginar mentalmente como será a trajetória da bola de acordo com o ângulo escolhido para a tacada e levando em consideração as tabelas nas quais ela irá bater. Esta técnica pode ser aprimorada com o tempo, pois ao jogar mais partidas você terá uma noção melhor de como a bola se comporta em cada situação.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Pense no jogo de forma geral</h1>
+                   <p>
+                    A sinuca é um jogo de estratégia, então não tente simplesmente encaçapar todas as bolas sem nenhum critério, pois isso pode levar a uma situação difícil. Por exemplo, se uma bola estiver em uma posição ruim para se encaçapada e você tentar mesmo assim, o seu erro pode deixar o adversário em uma situação favorável.
+                   </p>
+                   <p>
+                    É importante considerar também as opções defensivas, o que inclui “esconder” o bolão em um canto da mesa de forma que dificulte a próxima tacada do adversário.
+                   </p>
+                   <hr id="hrRegras">
+                   
+                   <h1>Erros comuns a serem evitados em jogos de sinuca</h1>
+                   <p>
+                    Já falamos aqui sobre algumas estratégias para vencer na sinuca, mas também é importante que você evite alguns erros que são muito comuns, principalmente para quem está iniciando no esporte:
+                   </p>
+                   <br>
+                   <li>Usar um taco inadequado: não subestime o peso que um bom taco tem em seu desempenho. Teste vários até encontrar o melhor.</li>
+                   <li>Não conferir a virola e a sola: quando estes itens estão muito gastos ou danificados, eles devem ser trocados imediatamente.</li>
+                   <li>Pensar apenas na tacada atual: um bom jogador deve fazer uma análise de longo prazo, tentando prever os próximos movimentos da partida.</li>
+                   <li>Tentar jogadas muito difíceis: bolas que estão extremamente difíceis de encaçapar devem ser avaliadas com cuidado. Um erro pode colocar seu adversário em uma posição vantajosa.</li>
+                   <li>Ter pressa. A frase “a pressa é inimiga da perfeição” também cabe na sinuca. Querer acelerar o jogo pode fazer com que você erre.</li>
+                   <li>Deixar as emoções interferirem. Um dos segredos dos grandes jogadores é o bom controle emocional.</li>
+                   <li>Esquecer-se do posicionamento correto.</li>
+                   <br>
+                   <hr id="hrRegras">
+                   <p>
+                    A sinuca está ganhando grande popularidade no Brasil, com grandes jogadores surgindo e torneios importantes sendo disputados e oferecendo grandes prêmios. A internet contribuiu para essa popularização, já que agora há até mesmo transmissão ao vivo das partidas.
+                   </p>
+                   <p>
+                    Além de ser jogado profissionalmente, o jogo também é uma ótima forma de entretenimento e de confraternizar com os amigos. Mas, mesmo em uma partida recreativa, existem alguns segredos da sinuca que ajudam a elevar o nível da brincadeira.
+                   </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ <!-- CONTEUDO TUTORIAL - ESTRATÉGIAS -->
+
+
+
+
+  <!-- CONTEUDO TUTORIAL - DICAS -->
+    <div class="mx-5 d-none" id="contentDicas">
+        <div>
+            <div class="mx-5 p-3 text-center">
+                <div id="textoDicas1" class="p-3">
+                    <h1>Movimento da tacada</h1>
+                    <p>
+                     Não basta se posicionar corretamente. Para dar a tacada perfeita é preciso ficar atento a toda a movimentação antes e durante a jogada. Para começar, mova apenas o antebraço durante a tacada, enquanto o braço permanece o mais fixo possível. Isso é importante para realizar um movimento mais certeiro.
+                    </p>
+                    <p>
+                     Além disso, não dê a tacada imediatamente; faça movimentos de vai e vem, aproximando e afastando o taco da bola branca, assim você saberá se está mirando corretamente para acertar no ponto exato.
+                    </p>
+                    <hr id="hrRegras">
+                    <h1>Tenha controle sobre a bola branca</h1>
+                    <p>
+                     Um dos principais fundamentos da sinuca é entender os tipos de movimentos que a bola branca faz depois de atingir as outras bolas na mesa. Pois, você se sairá melhor na partida se calcular exatamente onde o bolão irá parar, já que isso é importante para a próxima jogada.
+                    </p>
+                    <p>
+                     Dependendo da situação da partida, é possível executar um movimento para que a bola branca tenha 3 reações:
+                    </p>
+                    <br>
+                    <li><strong>Fique parada:</strong> o bolão acerta outra bola na mesa e para nessa posição.</li>
+                    <li><strong>Prossiga:</strong> é um dos truques de sinuca mais simples de executar, pois após acertar outra bola, o bolão continua o movimento, indo para outro local da mesa.</li>
+                    <li><strong>Retorne:</strong> esta é uma das técnicas avançadas de sinuca, conhecida como puxadinha, em que o bolão acerta outra bola e retorna para uma posição anterior.</li>
+                    <hr id="hrRegras">
+                    <h1>Como escolher o taco de sinuca ideal?</h1>
+                   <p>
+                    O taco é uma das principais ferramentas de um jogador. Mas se você pensa que eles são todos iguais, está muito enganado. Há muitos modelos no mercado e você precisa descobrir qual se adapta melhor ao seu jogo.
+                   </p>
+                   <p>
+                    O equipamento ideal é fundamental para aumentar o controle das jogadas, a força e a precisão. Na hora de escolher seu taco de sinuca, considere os seguintes pontos:
+                   </p>
+                   <br>
+                   <li>Tipo de taco.</li>
+                   <li>Material de fabricação.</li>
+                   <li>Peso.</li>
+                   <li>Tamanho.</li>
+                   <hr id="hrRegras">
+                   <h1>Conhecimento das Regras</h1>
+                   <p>
+                    É essencial ter um bom entendimento das regras do jogo, incluindo as regras específicas da variação que está sendo jogada. Isso ajuda os jogadores a tomar decisões estratégicas e evitar cometer faltas.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>Saiba que o psicológico também é importante</h1>
+                   <p>
+                    Se você quer saber como melhorar na sinuca, temos uma dica de ouro para você: não deixe que a questão psicológica seja um fator determinante para o declínio do seu jogo.
+                   </p>
+                   <p>
+                    Principalmente em momentos decisivos, pode surgir um certo nervosismo, medo de errar e falta de confiança. Para enfrentar estes momentos, foque em pensamentos positivos, como em boas jogadas que você já fez.
+                   </p>
+                   <p>
+                    Além disso, não tenha pressa. Calcule bem o movimento e respire fundo para desacelerar o ritmo cardíaco.
+                   </p>
+                   <hr id="hrRegras">
+                   <h1>A importância do treinamento e prática na sinuca</h1>
+                   <p>
+                    O treinamento e a prática na sinuca são importantes por diversos motivos. É por meio deles que você melhora a sua técnica, desenvolve estratégias, aumenta a precisão e a concentração.
+                   </p>
+                   <p>
+                    O aumento da confiança também é perceptível, pois você se sentirá mais confortável durante o jogo e saberá de sua capacidade de realizar determinada jogada.
+                   </p>
+                   <p>
+                    Por fim, a prática constante ajuda o jogador a se acostumar e lidar melhor com situações de muita pressão, que são comuns em torneios e partidas importantes.
+                   </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+      <!-- CONTEUDO TUTORIAL - DICAS -->
+
+    <script src="/assets/script/tutorialscript.js"></script>
+    <script src="/assets/script/navbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

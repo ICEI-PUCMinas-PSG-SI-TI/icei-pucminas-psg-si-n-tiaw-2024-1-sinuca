@@ -1,0 +1,42 @@
+{
+  "comentarios": [
+    {
+      "usuario": "Sérgio",
+      "id": 1,
+      "conteudo": "Sempre joguei casualmente, porém sempre tive uma dificuldade de encontrar jogos, por isso não jogava com muita frequência, mas após descobrir esse site me divirto muito mais com o esporte que gosto.",
+      "likes": 50,
+      "likesdados": true
+    },
+    {
+      "usuario": "João",
+      "id": 2,
+      "conteudo": "Com a plataforma consegui encontrar adversários desafiadores, aprimorar as minhas técnicas e fazer novos amigos. Agora entrar em partidas se tornou algo muito mais fácil.",
+      "likes": 552,
+      "likesdados": true
+    },
+    {
+      "usuario": "Carlos",
+      "id": 3,
+      "conteudo": "O uso do site ajudou muito na minha iniciação no esporte, consegui encontrar partidas com jogadores em um nível similar ao meu, além disso com o chat consegui pegar várias dicas com jogadores mais experientes.",
+      "likes": 77,
+      "likesdados": true
+    },
+    {
+      "id": "4",
+      "name": "David",
+      "email": "david@example.com"
+    },
+    {
+      "id": "teste",
+      "outro": "teste"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "login": "admin",
+      "nome": "Guilherme",
+      "senha": "admin"
+    }
+  ]
+}

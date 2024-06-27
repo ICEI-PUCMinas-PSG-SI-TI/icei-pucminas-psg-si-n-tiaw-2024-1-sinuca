@@ -1,0 +1,117 @@
+body a {
+  text-decoration: none;
+}
+
+  /*ABAS DO TUTORIAL CSS*/
+  #aprende{
+    background-color: #00603A;
+  }
+
+  #aprendaajogar{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+  #regras1{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+  #regras2{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+  #regras3{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+  #regras4{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+  #regras5{
+    background-color: #06935c;
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+  }
+ /*ABAS DO TUTORIAL CSS*/
+
+
+
+  /*CONTEUDO TUTORIAL CSS*/
+  #tutorialContent{
+    background-color: #00603A;
+  }
+
+  #imgTutorial{
+    background-color: #06935c;
+  }
+
+  #tutorialTexto{
+    color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+
+  }
+
+  #apresentTutorial{
+    background-color: #06935c;
+  }
+
+  /*CONTEUDO TUTORIAL CSS*/
+
+
+
+#contentRegras{
+  font-size: large;
+  background-color: #00603A;
+  color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+}
+#contentDefinicoes{
+  font-size: large;
+  background-color: #00603A;
+  color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+}
+#contentTecnicas{
+  font-size: large;
+  background-color: #00603A;
+  color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+}
+#contentEstrategias{
+  font-size: large;
+  background-color: #00603A;
+  color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+}
+#contentDicas{
+  font-size: large;
+  background-color: #00603A;
+  color: white; text-shadow: #00603A 0.1em 0.25em 0.2em
+}
+
+
+
+
+
+
+
+#textoDefinicoes1{
+  background-color: #06935c;
+}
+
+#textoRegras1{
+  background-color: #06935c;
+}
+#textoTecnicas1{
+  background-color: #06935c;
+}
+#textoEstrategias1{
+  background-color: #06935c;
+}
+#textoDicas1{
+  background-color: #06935c;
+}
+
+
+
+
+
+#hrRegras{
+  border-color: white;
+  border-width: 5px;
+}
+
