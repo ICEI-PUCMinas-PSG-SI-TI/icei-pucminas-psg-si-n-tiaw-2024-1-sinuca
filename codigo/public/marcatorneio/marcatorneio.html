@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="marcatorneio.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Tacada Certa</title>
+</head>
+<body>
+    <header>
+      <img src="Logomarca.jpg" width="150px">
+      <nav class="navbar navbar-expand-lg bg-body-success">
+        <div class="container-fluid">
+          <button class="navbar-toggler bg-body-sucess" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" id="perfil" href="perfil">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="partida-privada" href="partidas privadas">Criar partidas privadas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="partida-anterior" href="partidas anteriores">Partidas anteriores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="como-jogar" href="como jogar">Como jogar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="sobre" href="sobre">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="cadastro" href="cadastro">Cadastrar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="login" href="logar">Logar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+
+          <h1  class="titulo">Marcar Torneio</h1>
+
+
+          <div class="container">
+            <div class="left-panel">
+                <form id="form-partida">
+                    <label>Nome da Partida</label>
+                    <input type="text" name="nome-partida">
+                    <label>Endereço</label>
+                    <input type="text" name="endereco">
+                    <label>E-mail</label>
+                    <input type="email" name="email">
+                    <label>CEP</label>
+                    <input type="text" name="cep">
+                    <label>Contato do proprietário</label>
+                    <input type="text" name="contato">
+                    <label>Maximo</label>
+                    <input type="number" name="maximo">
+                    <label>Horário da partida</label>
+                    <input type="time" name="horario">
+                    <button type="button" onclick="lerFormulario()">Enviar</button>
+                </form>
+            </div>
+            <div class="right-panel">
+                 <h1>Convidar Jogadores</h1>
+                 <form id="task-form">
+                     <input type="text" id="task-input" placeholder="Pesquisar Jogadores" required>
+                     <button type="submit" onclick="lerConvidado()">Adicionar</button>
+                 </form>
+                 <ul id="task-list"></ul>
+                 </div>
+            
+            
+            </div>
+        </div>
+        
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="marcatorneio.js"></script>
+</body>
+</html>
