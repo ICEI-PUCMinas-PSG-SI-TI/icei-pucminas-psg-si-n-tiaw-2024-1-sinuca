@@ -17,10 +17,10 @@ ready(function(){
 })
 
 function cadastro(){
-    window.location.href = '/cadastro/cadastro.html';
+    window.location.href = '../cadastro/cadastro.html';
 }
 function login(){
-    window.location.href = '/login/login.html';
+    window.location.href = '../login/login.html';
 }
 
   //SCRIPT DO CARROSSEL DE CARDS
