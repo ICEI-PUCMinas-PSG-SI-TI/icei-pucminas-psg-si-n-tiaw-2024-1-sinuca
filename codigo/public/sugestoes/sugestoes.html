@@ -32,53 +32,57 @@
     </nav>
   </header>
   <main>
-    <section class="sugestoes">
-      <h2>Sugestões e reclamações</h2>
-      <p>Temos como objetivo sempre aprimorar a nossa plataforma, por favor se tiver alguma sugestão ou reclamação sobre
-        o site nos envie abaixo, responderemos a sua avaliação por email.</p>
-      <form id="sugestaoForm">
-        <!-- <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"> -->
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-
-        <label for="sugestao">Sugestão ou reclamação:</label>
-        <textarea id="sugestao" name="sugestao"></textarea>
-      </form>
-      <button id="submit" onclick=EnviarComentario()>Enviar</button>
-
-      <div id="MeusComentarios" onload=MeusComentarios()>
-        <h2>Meus Comentarios</h2>
-        <div id="MeusComentariosConteudo">
-
-        </div>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <section class="col-lg-5 col-md-12 col-12 me-2 md-mx-0" id="sugests">
+      
+          <h2>Sugestões e reclamações</h2>
+          <p>Temos como objetivo sempre aprimorar a nossa plataforma, por favor se tiver alguma sugestão ou reclamação sobre
+            o site nos envie abaixo, responderemos a sua avaliação por email.</p>
+          <form id="sugestaoForm">
+            <!-- <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"> -->
+    
+    
+            <label for="sugestao">Sugestão ou reclamação:</label>
+            <textarea id="sugestao" name="sugestao"></textarea>
+          </form>
+          <button id="submit" onclick=EnviarComentario()>Enviar</button>
+    
+          <div id="MeusComentarios" onload=MeusComentarios()>
+            <h2>Meus Comentarios</h2>
+            <div id="MeusComentariosConteudo">
+    
+            </div>
+          </div>
+        </section>
+        <section class="col-lg-5 col-md-12 col-12  ms-2 md-mx-0" id="coments">
+          <div id="headercomentarios">
+            <h2>Top comentários</h2>
+            <div id="filtragem">
+              <select name="Filtro" id="FiltroBtn" onchange=CarregaComentario()>
+                <option value="likeFiltro">Curtidas</option>
+                <option value="newFiltro">Recentes</option>
+                <!-- <option value="respFiltro">Respostas</option> -->
+              </select>
+              <svg xmlns="http://www.w3.org/2000/svg" id="filtroIcon" width="16" height="16" fill="currentColor"
+                class="bi bi-funnel-fill" viewBox="0 0 16 16">
+                <path
+                  d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
+              </svg>
+            </div>
+          </div>
+    
+          <div id="comentariosconteudo">
+    
+          </div>
+    
+    
+    
+        </section>
       </div>
-    </section>
-    <section class="comentarios" id="coments">
-      <div id="headercomentarios">
-        <h2>Top comentários</h2>
-        <div id="filtragem">
-          <select name="Filtro" id="FiltroBtn" onchange=CarregaComentario()>
-            <option value="likeFiltro">Curtidas</option>
-            <option value="newFiltro">Recentes</option>
-            <!-- <option value="respFiltro">Respostas</option> -->
-          </select>
-          <svg xmlns="http://www.w3.org/2000/svg" id="filtroIcon" width="16" height="16" fill="currentColor"
-            class="bi bi-funnel-fill" viewBox="0 0 16 16">
-            <path
-              d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5z" />
-          </svg>
-        </div>
-      </div>
-
-      <div id="comentariosconteudo">
-
-      </div>
-
-
-
-    </section>
+    </div>
+    
   </main>
 
   <script src="/assets/script/sugestoes.js"></script>

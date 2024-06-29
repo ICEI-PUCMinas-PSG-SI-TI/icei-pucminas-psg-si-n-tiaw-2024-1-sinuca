@@ -86,7 +86,10 @@ nav {
   .mobile-menu {
     display: block;
   }
+
+  
 }
+
 
 .nav-list.active {
   transform: translateX(0);
@@ -128,30 +131,28 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sugestoes {
-  width: 45%;
-}
 
-.sugestoes h2 {
+
+#sugests h2 {
   color: #004d26;
 }
 
-.sugestoes form {
+#sugests form {
   display: flex;
   flex-direction: column;
 }
 
-.sugestoes label {
+#sugests label {
   margin: 10px 0 5px;
 }
 
-.sugestoes input, .sugestoes textarea {
+#sugests input, #sugests textarea {
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
 }
 
-.sugestoes button {
+#sugests button {
   margin-top: 10px;
   padding: 10px;
   background-color: #004d26;
@@ -161,11 +162,9 @@ section {
   cursor: pointer;
 }
 
-.comentarios {
-  width: 45%;
-}
 
-.comentarios h2 {
+
+#coments h2 {
   color: #004d26;
 }
 

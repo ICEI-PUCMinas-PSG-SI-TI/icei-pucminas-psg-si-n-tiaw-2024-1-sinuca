@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../assets/css/perfil.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo"><img src="../assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href=".//perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
+                <li><a href="#" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
+                <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+                <li><a href="/tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
+                <li><a href="/saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
+                <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+                <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <div class="profile-picture">
+                <img src="../assets/images/perfil.jpg" alt="Foto de Perfil">
+                <input type="text" id="name" placeholder="Digite seu nome" value="">
+            </div>
+            <div class="profile-info">
+                <div class="info-field">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" value="">
+                </div>
+                <div class="info-field">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="phone" value="">
+                </div>
+                <div class="info-field">
+                    <label for="nascimento">Data de nascimento:</label>
+                    <input type="date" id="birthdate" value="">
+                </div>
+                <div class="info-field">
+                    <label for="genero">Gênero:</label>
+                    <select id="gender">
+                        <option value="">Selecione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="info-field">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="description" rows="4"></textarea>
+                </div>
+                <button id="saveProfile">Salvar Perfil</button>
+            </div>
+        </section>
+
+        <section class="match-history">
+            <h2>Histórico de partidas</h2>
+            <div class="match-list" id="matchList">
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/script/perfil.js"></script>
+    <script src="../assets/script/navbar.js"></script>
+</body>
+
+</html>

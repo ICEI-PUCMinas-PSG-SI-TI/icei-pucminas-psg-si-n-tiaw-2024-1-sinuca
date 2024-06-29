@@ -43,7 +43,7 @@ var dadosPartida = {
         "contato": "Telefone: (31) 3226-8476",
         "latitude": "-19.91966659492644",
         "longitude": "-43.936329593680696"
-    },
+    }
 };
 
 const DadosPartida = dadosPartida["partida" + idPartida];

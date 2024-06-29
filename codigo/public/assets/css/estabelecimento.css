@@ -1,0 +1,232 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+  color: #fff;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo img {
+  width: auto;
+  height: 15vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #06935c;
+  height: 15vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.nav-list li button {
+  background-color: black;
+  padding-inline: 5px;
+  border-radius: 10px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #00603A;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.form-container {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cadastro-info,
+.redes-sociais {
+  background-color: #00603A;
+  padding: 32px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.cadastro-form h1 {
+  margin-bottom: 32px;
+  font-size: 32px;
+  color: #000;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #06935c;
+  color: #ffffff;
+}
+
+.input-group textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  min-height: 100px;
+  resize: vertical;
+  background-color: #06935c;
+  color: #ffffff;
+}
+
+.cadastro-form button,
+.redes-sociais button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #06935c;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 32px;
+}
+
+.cadastro-form button:hover,
+.redes-sociais button:hover {
+  opacity: 0.7;
+}
+
+.redes-sociais h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+@media (max-width: 450px) {
+  .input-group {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .redes-sociais {
+    margin-top: 32px;
+  }
+}
