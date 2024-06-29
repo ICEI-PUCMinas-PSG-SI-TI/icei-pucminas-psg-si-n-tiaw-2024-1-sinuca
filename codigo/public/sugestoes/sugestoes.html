@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Palavra Certa</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/sugestoes.css">
+  <link rel="stylesheet" href="../assets/css/sugestoes.css">
+  <link rel="stylesheet" href="../assets/css/navbar.css">
+
   
   
 </head>
@@ -14,22 +16,22 @@
 <body onload=CarregaComentario()>
   <header>
     <nav>
-      <a href="/index.html" class="logo"><img src="/assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
+      <a href="../index.html" class="logo"><img src="../assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
       <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
       </div>
       <ul class="nav-list">
-        <li><a href="#">Perfil</a></li>
-        <li><a href="#">Criar partidas privadas</a></li>
-        <li><a href="#">Partidas anteriores</a></li>
-        <li><a href="#">Como jogar</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><button><a href="#">Cadastre-se</a></button></li>
-        <li><button><a href="#">Login</a></button></li>
+          <li><a href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
+          <li><a href="../marcartorneio/marcatorneio.html" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
+          <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+          <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
+          <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
+          <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+          <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
       </ul>
-    </nav>
+  </nav>
   </header>
   <main>
     <div class="container-fluid">
@@ -85,7 +87,9 @@
     
   </main>
 
-  <script src="/assets/script/sugestoes.js"></script>
+  <script src="../assets/script/sugestoes.js"></script>
+  <script src="../assets/script/navbar.js"></script>
+
 </body>
 
 </html>

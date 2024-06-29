@@ -64,10 +64,10 @@ function loadTasks() {
 //fim da lista
 
 function lerFormulario() {
-    // Seleciona o formulÃ¡rio
+    // Seleciona o formulário
     const form = document.getElementById('form-partida');
 
-    // Coleta os valores dos campos do formulÃ¡rio
+    // Coleta os valores dos campos do formulário
     const nomePartida = form.elements['nome-partida'].value;
     const endereco = form.elements['endereco'].value;
     const email = form.elements['email'].value;
@@ -93,7 +93,7 @@ function lerFormulario() {
     // Exibe a string JSON no console 
     console.log(dadosFormularioJSON);
 }
-//fim array ler formulÃ¡rio
+//fim array ler formulário
 
 function lerConvidado() {
     
