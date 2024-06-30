@@ -23,39 +23,40 @@
             <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
             <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
             <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
-            <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-            <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+            <li><button><a href="#" onclick="cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+            <li><button><a href="#" onclick="login()" style="color: #fff; text-decoration:none">Login</a></button></li>
         </ul>
     </nav>
     </header>
     
-
     <h1 class="titulo">Marcar torneio público</h1>
 
     <div class="container">
         <div class="left-panel">
             <form id="form-partida">
                 <label>Nome do Torneio</label>
-                <input type="text" name="nome-partida">
-                <label>Endereço</label>
-                <input type="text" name="endereco">
-                <label>E-mail</label>
-                <input type="email" name="email">
+                <input type="text" id="nome-partida" name="nome-partida">
                 <label>CEP</label>
-                <input type="text" name="cep">
-                <label>Contato do proprietário</label>
-                <input type="text" name="contato">
+                <input type="text" id="cep" name="cep">
+                <label>Endereço</label>
+                <input type="text" id="endereco" name="endereco">
+                <label>E-mail</label>
+                <input type="email" id="email" name="email">
+                <label>Telefone</label>
+                <input type="text" id="telefone" name="telefone">
                 <label>Maximo</label>
-                <input type="number" name="maximo">
+                <input type="number" id="maximo" name="maximo">
+                <label>Dia</label>
+                <input type="date" id="data" name="data">
                 <label>Horário do torneio</label>
-                <input type="time" name="horario">
+                <input type="time" id="horario" name="horario">
                 <button type="button" onclick="lerFormulario()">Enviar</button>
             </form>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../public/assets/script/torneiopublico.js"></script>
-    <script src="../public/assets/script/navbar.js"></script>
+    <script src="../assets/script/torneiopublico.js"></script>
+    <script src="../assets/script/navbar.js"></script>
 </body>
 </html>
