@@ -1,8 +1,7 @@
-
-localStorage.setItem('user', 1)
 //FUNÇÃO DE CARREGAR COMENTARIOS
 
-function CarregaComentario() {
+
+async function CarregaComentario() {
 
 
 fetch("/comentarios")
@@ -37,12 +36,20 @@ fetch("/comentarios")
 
   for (let i = 0; i < data.length; i++) {
     let user = localStorage.getItem('user')
+    user = parseInt(user)
+
+
+    let usuariologado = data.find(data => data.userId == user)
+
+    let acharsedeulike = data[i].likesdados.find(likesdados => likesdados.idLike == user)
+
     const nome = data[i].usuario
     const sugestao = data[i].conteudo
     const likes = data[i].likes
-    const idcoment = data[i].id
+    const idcoment = data[i].userId
 
-    if (data[i].likesdados) {
+
+    if (acharsedeulike) {
       if(idcoment == user){
         comentarios.innerHTML += (`<div class="comentario"id="${idcoment}" style="background-color:#d9ffd1;"> <h3>Você</h3><p>${sugestao}<span onclick=DarLike(this)><a href="#" class="bg-success p-1 text-white border rounded-pill">${likes}❤️</a></span></div>`)
 
@@ -55,60 +62,16 @@ fetch("/comentarios")
 
     else {
       if (idcoment == user){
-        comentarios.innerHTML += (`<div class="comentario"id="${idcoment}"><h3>Você</h3><p>${sugestao}<span onclick=DarLike(this)><a href="#" class="text-white p-1">${likes}❤️</a></span></div>`)
+        comentarios.innerHTML += (`<div class="comentario SEU"id="${idcoment}" style="background-color:#d9ffd1;"><h3>Você</h3><p>${sugestao}<span onclick=DarLike(this)><a href="#" class="text-dark p-1">${likes}❤️</a></span></div>`)
       }
       else{
-      comentarios.innerHTML += (`<div class="comentario"id="${idcoment}"><h3>${nome}</h3><p>${sugestao}<span onclick=DarLike(this)><a href="#" class="text-white p-1">${likes}❤️</a></span></div>`)
+      comentarios.innerHTML += (`<div class="comentario"id="${idcoment}"><h3>${nome}</h3><p>${sugestao}<span onclick=DarLike(this)><a href="#" class="text-dark p-1">${likes}❤️</a></span></div>`)
     }
     }
     }
-    console.log('meuscoments')
-MeusComentarios()
    
   //MeusComentarios()
- async function MeusComentarios() {
 
-
-    let meuscomentarios = document.getElementById('MeusComentariosConteudo')
-      meuscomentarios.innerHTML = ''
-
-    
-      try
-      {
-        let resposta = await fetch('/comentarios');
-        if (!resposta.ok) {
-          throw new Error('Erro ao obter usuários');
-        }
-        let meuscoments = await resposta.json();
-        for (let i = 0; i < meuscoments.length; i++) {
-          const nome = meuscoments[i].usuario
-          let user = localStorage.getItem('user')
-          const sugestao = meuscoments[i].conteudo
-          const likes = meuscoments[i].likes
-          const idcoment = meuscoments[i].id
-  
-          if (idcoment == user) {
-            meuscomentarios.innerHTML += (`<div class="comentario" id="${idcoment}"style="background-color:#d9ffd1;""> <h3>Você</h3><p>${sugestao}<span>${likes}❤️</span><button onclick=ExcluirComentario(this)>Excluir Comentario</button></div>`)
-          }
-        }
-
-      }
-      catch (erro) {
-        console.error('Ocorreu um erro no fetch comentarios:', erro);
-      }
-
-      
-
-    }
-    
-
-   
-  
-
-
-
-
-  
 })
 .catch(error => {
   console.error('Erro:', error); // Trata os erros da requisição
@@ -118,9 +81,51 @@ MeusComentarios()
 
 
 }
+
+    
+  
+  async function MeusComentarios() {
+ 
+ 
+     let meuscomentarios = document.getElementById('MeusComentariosConteudo')
+       meuscomentarios.innerHTML = ''
+ 
+     
+       try
+       {
+         let resposta = await fetch('/comentarios');
+         if (!resposta.ok) {
+           throw new Error('Erro ao obter usuários');
+         }
+         let meuscoments = await resposta.json();
+         for (let i = 0; i < meuscoments.length; i++) {
+           const nome = meuscoments[i].usuario
+           let user = localStorage.getItem('user')
+           const sugestao = meuscoments[i].conteudo
+           const likes = meuscoments[i].likes
+           const idcoment = meuscoments[i].userId
+   
+           if (idcoment == user) {
+             meuscomentarios.innerHTML += (`<div class="comentario" id="${idcoment}"style="background-color:#d9ffd1;""> <h3>Você</h3><p>${sugestao}<span>${likes}❤️</span><button onclick=ExcluirComentario(this)>Excluir Comentario</button></div>`)
+           }
+         }
+ 
+       }
+       catch (erro) {
+         console.error('Ocorreu um erro no fetch comentarios:', erro);
+       }
+ 
+       
+ 
+     }
+     
+   
 //FUNÇÃO DE CARREGAR COMENTARIOS
 
-
+function CarregaComentarioGeral(){
+  CarregaComentario()
+  MeusComentarios()
+}
 
 //FUNÇÃO DE ADICIONAR COMENTARIOS
 function EnviarComentario() {
@@ -128,7 +133,11 @@ function EnviarComentario() {
 
   let user = localStorage.getItem('user')
   let novoComentario;
-  // console.log(nomeComentario.value)
+  let camposugestão = document.getElementById('sugestao')
+  if (camposugestão == ''){
+    alert('Preencha o campo de sugestão')
+    return
+  }
  let usuarioID = obterUsuarioPorNome(user)
   async function obterUsuarioPorNome(user) {
     try {
@@ -137,26 +146,24 @@ function EnviarComentario() {
         throw new Error('Erro ao obter usuários');
       }
       let usuarios = await resposta.json();
-      console.log('usuariosdata',usuarios)
       let userLogin = usuarios.find(usuario => usuario.id == user);
-      console.log('userlogin = ',userLogin)
       let idlogin = userLogin.id
       
-      let camposugestão = document.getElementById('sugestao')
+      
       const conteudoComentario = camposugestão.value
-      console.log(idlogin)
       try {
         const respostaUsuario = await fetch(`/usuarios/${idlogin}`);
         if (!respostaUsuario.ok) {
           throw new Error('Erro ao obter informações do usuário');
         }
         const usuario = await respostaUsuario.json();
-    
+        user = parseInt(user)
         const comentario = {
+          userId: user,
           usuario: usuario.nome,
           conteudo: conteudoComentario,
           likes: 0,
-          likesdados: false
+          likesdados: []
         };
     
         const respostaComentario = await fetch('/comentarios', {
@@ -183,90 +190,12 @@ function EnviarComentario() {
     console.error('Ocorreu um erro:', erro);
   }
  
-  console.log('a')
-  CarregaComentario()
+  CarregaComentarioGeral()
 }}
   // Função para postar um comentário
  
   
-    // fetchedData não está disponível aqui imediatamente após o fetch iniciar
-
-    // Exemplo de como usar fetchedData posteriormente, após o fetch ter completado
- 
   
-  
-  
-  
-
-  // Chamada de exemplo para usar os dados após o fetch ter completado
-
-
-
-
-  
- 
-
-//
-  
-//
-  /*fetch("/usuarios")
-  .then(response1 => {
-    if (!response1.ok) {
-      throw new Error('Erro ao buscar recurso1: ' + response1.status);
-    }
-    return response1.json(); // retorna a resposta da primeira requisição como JSON
-  })
-  .then(data1 => {
-    
-
-    
-    return fetch("/comentarios", {
-      
-    });
-  })
-  .then(response2 => {
-    if (!response2.ok) {
-      throw new Error('Erro ao criar recurso2: ' + response2.status);
-    }
-    return response2.json(); // retorna a resposta da segunda requisição como JSON
-  })
-  .then(data2 => {
-    console.log('Recurso2 criado com sucesso:', data2);
-    // Aqui você pode manipular a resposta da segunda requisição
-  })
-  .catch(error => {
-    console.error('Erro durante as requisições:', error);
-  });
-
-  
-
-  /*
-
-  if (emailComentario.value == "" || sugestaoComentario.value == ""){
-    alert('Email / Sugestão em branco')
-  }
-  else {
-    
-
-  CarregaComentario()
-  }
-
-*/
-
-//FUNÇÃO DE ADICIONAR COMENTARIOS
-
-
-
-
-
-//FUNÇÃO DE MOSTRAR SEUS COMENTARIOS
-
-
-//FUNÇÃO DE MOSTRAR SEUS COMENTARIOS
-
-
-
-
 
 
 //FUNÇÃO DE REMOVER COMENTARIOS
@@ -280,21 +209,15 @@ async function ExcluirComentario(button) {
       throw new Error('Erro ao obter informações do usuário');
     }
     let resposta = await fetchComents.json();
-    console.log('resposta = ', resposta)
 
     var parentDiv1 = button.parentElement;
-    console.log('parentDiv1',parentDiv1)
     var parentDiv2 = parentDiv1.parentElement;
-    console.log('parentDiv2',parentDiv2)
     var DivId = parentDiv2.id
-    console.log('DivId',DivId)
 
 
 
-    let comentarioDelete = resposta.find(resposta => resposta.id == DivId)
-    console.log('comentariodelete = ', comentarioDelete)
+    let comentarioDelete = resposta.find(resposta => resposta.userId == DivId)
     let iddelete = comentarioDelete.id
-    console.log('iddelete = ', iddelete)
 
 
     
@@ -306,7 +229,7 @@ async function ExcluirComentario(button) {
       }
 
       console.log('Comentário deletado com SUCESSO')
-      CarregaComentario()
+      CarregaComentarioGeral()
     }
     catch(erro){
       console.error("Erro no fetch delete", erro)
@@ -316,154 +239,135 @@ async function ExcluirComentario(button) {
     console.error("Erro no fetch comentarios", erro)
   }
 
-/*
-  if (confirmacao) {
-    const commentGet = localStorage.getItem('comentarios')
-    const commentParse = JSON.parse(commentGet)
 
-
-
-    
-
-    
-
-    
-    commentParse.splice(idcomentario, 1)
-    console.log(commentParse)
-    const commentString = JSON.stringify(commentParse)
-    localStorage.setItem('comentarios', commentString)
-
-    CarregaComentario()
-  }
-  else {
-
-  }
-*/
 }
 //FUNÇÃO DE REMOVER COMENTARIOS
 
 
 //FUNÇÃO DE DAR LIKE
-function DarLike(span) {
+async function DarLike(span) {
  
   let Parent1 = span.parentElement
   let Parent2 = Parent1.parentElement
-  let idLikes = Parent2.id
+  let iddocomentario = Parent2.id
+  let usuariologado = localStorage.getItem('user')
+   
+    try {
+      let resposta = await fetch('/comentarios');
+      if (!resposta.ok) {
+        throw new Error('Erro ao obter comentarios');
+      }
+      
+      let jsoncomentarios = await resposta.json()
+      let UsuarioADarLike = jsoncomentarios.find(jsoncomentarios => jsoncomentarios.userId == usuariologado)
 
- 
- 
-  fetch('/comentarios')
-  .then(response => {
-    if (!response.ok) {
-        throw new Error('Erro ao buscar os dados dos comentarios');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Dados dos comentários:', data);
+      let DonoDoComentario = jsoncomentarios.find(jsoncomentarios => jsoncomentarios.userId == iddocomentario)
+
+      let idDoDono = DonoDoComentario.id
+
+      let user = localStorage.getItem('user')
+
+      
+
+
+      let idDoUsuarioLike = UsuarioADarLike.userId
+      
+      
+      
+      let adicionarlikenodono = DonoDoComentario.likesdados
+      let likenodonojson = JSON.stringify(adicionarlikenodono)
+      let likeversaoarray = JSON.parse(likenodonojson)
+      likeversaoarray.push({idLike: idDoUsuarioLike})
+
+
+
+      let darlike = {
+        likesdados:likeversaoarray
+      }
+
+      let newlikes = DonoDoComentario.likes + 1
+
+      let morelikes = {
+        likes: newlikes
+      }
+
+      //SE JA DEU LIKE
+      let acharsedeulike = DonoDoComentario.likesdados.find(likesdados => likesdados.idLike == user)
+      if (acharsedeulike){
+
+        let remocaodolike = DonoDoComentario.likesdados.filter(likesdados => likesdados.idLike !== acharsedeulike.idLike)
+
+        
+
+        let tiralike = {
+          likesdados:remocaodolike
+        }
+
+        newlikes = DonoDoComentario.likes - 1
+
+        let menoslike = {
+          likes: newlikes
+        }
+
+        const diminuirlike = await fetch(`/comentarios/${idDoDono}`,{
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(menoslike)
+        });
+
+        const removerlike = await fetch(`/comentarios/${idDoDono}`,{
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(tiralike)
+        });
+        CarregaComentarioGeral()
+        return
+      }
+            //SE JA DEU LIKE
+
+      
+        const aumentarlike = await fetch(`/comentarios/${idDoDono}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(morelikes)
+        });
+
+        if (!aumentarlike.ok) {
+          throw new Error('Erro ao postar comentário');
+        }
     
-    let idComentario = data.find(item => item.id == idLikes)
+        const likesaumentandos = await aumentarlike.json();
+        console.log('Like Aumentado:', likesaumentandos);
+
+        const respostaComentario = await fetch(`/comentarios/${idDoDono}`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(darlike)
+        });
     
-    if (idComentario.likesdados){
-      alert('Você já curtiu esse comentário')
-      return;
-    }
+        if (!respostaComentario.ok) {
+          throw new Error('Erro ao postar comentário');
+        }
     
-    let updatedData = {
-      likes: idComentario.likes + 1,
-      likesdados: true
-    };
+        const novoComentario = await respostaComentario.json();
+        console.log('Comentário postado com sucesso:', novoComentario);
+      
      
+    
+  }
+  catch (erro) {
+    console.error('Ocorreu um erro:', erro);
+  }
 
-    return fetch(`/comentarios/${idComentario.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedData)
-    });
-  })
-  .then(response => {
-    CarregaComentario()
-    if (!response.ok) {
-        throw new Error('Erro ao atualizar os dados');
-    }
-    console.log('Dados atualizados com sucesso');
+  CarregaComentarioGeral()
 
-  })
-  .catch(error => {
-    console.error('Erro:', error);
-  });   
-}
-  
-  
-  
-
+  }
  
-////////////
- 
-   
-    
-    
-  
-
-  
-
-
-    
-
-   
-
-    
-    
-    /*let validacao = true;
-
-    for (let i = 0; i < likesParse.length; i++) {
-      
-
-      if (idLikes == likesParse[i].id) {
-        alert('Você ja curtiu esse comentário!')
-        validacao = false;
-        break;
-      }
-      else {
-        validacao = true;
-      }
-    }
-    if (validacao == true) {
-      commentParse[idLikes].curtidas += 1
-
-      const newComentario = {
-        "id": idLikes,
-      }
-
-      likesParse.push(newComentario)
-
-
-      const likesString = JSON.stringify(likesParse)
-      localStorage.setItem('seuslikes', likesString)
-
-      const commentString = JSON.stringify(commentParse)
-      localStorage.setItem('comentarios', commentString)
-
-
-      CarregaComentario()*/
-
-      
-    
-
-  
-
-  
- 
-  
-
-
-
-
-  // let novaCurtida = commentParse.find(item => item.id === idLikes)
-
-
-
-
-//FUNÇÃO DE DAR
