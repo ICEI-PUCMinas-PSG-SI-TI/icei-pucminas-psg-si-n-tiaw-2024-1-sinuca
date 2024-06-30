@@ -2,13 +2,13 @@ body {
     font-family: sans-serif;
     margin: 0;
     background-color: #ffffff;
-    color: #fff;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
+    color: white;
 }
 
 * {

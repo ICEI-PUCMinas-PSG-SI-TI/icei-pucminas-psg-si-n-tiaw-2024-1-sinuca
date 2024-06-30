@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
   let profileData = loadProfileData();
   populateProfileForm(profileData);
   setupSaveButton();
@@ -19,7 +19,6 @@ function loadProfileData() {
 }
 
 function populateProfileForm(profileData) {
-  document.getElementById("name").value = profileData.name;
   document.getElementById("email").value = profileData.email;
   document.getElementById("phone").value = profileData.phone;
   document.getElementById("birthdate").value = profileData.birthdate;
@@ -77,5 +76,88 @@ function setupMobileMenu() {
     mobileMenu.classList.toggle('active');
     navList.classList.toggle('active');
   });
+}*/
+
+async function CarregarDadosPerfil() {
+
+  let userLogado = localStorage.getItem('user')
+
+
+  try {
+    let resposta = await fetch('/usuarios')
+    if (!resposta.ok) {
+      console.error('Fetch Get (1) falha')
+    }
+    let DadosDosUsuarios = await resposta.json()
+    let DadosUsuarioLogado = DadosDosUsuarios.find(DadosDosUsuarios => DadosDosUsuarios.id == userLogado)
+    console.log('quem esta logado = ', DadosUsuarioLogado)
+
+    let nomedeusuario = document.getElementById('nomedeusuario')
+    nomedeusuario.innerHTML = DadosUsuarioLogado.nome
+
+    let emaildousuario = document.getElementById('emaildousuario')
+    emaildousuario.innerHTML = `<strong>E-MAIL: </strong>${DadosUsuarioLogado.email}`
+
+    let telefonedousuario = document.getElementById('telefonedousuario')
+    telefonedousuario.innerHTML = `<strong>TELEFONE: </strong>${DadosUsuarioLogado.telefone}`
+
+    let datanascimento = document.getElementById('datanascimento')
+    let nascimento = DadosUsuarioLogado.nascimento
+    nascimento = nascimento.replaceAll('-', '/')
+    datanascimento.innerHTML = `<strong>DATA DE NASCIMENTO: </strong>${nascimento}`
+
+    let generodousuario = document.getElementById('generodousuario')
+    generodousuario.innerHTML = `<strong>GENERO: </strong>${DadosUsuarioLogado.genero}`
+
+    let fotodeperfil = document.getElementById('fotodeperfil')
+    fotodeperfil.src = DadosUsuarioLogado.fotodeperfil
+
+  }
+  catch (erro) {
+    console.log('falha na função carregar dados', erro)
+  }
+}
+
+async function TrocarFoto() {
+  let fotoinserida = prompt('Insira a URL de sua foto')
+  let userLogado = localStorage.getItem('user')
+  if (fotoinserida == null) {
+    alert('URL Inválido')
+    return
+  }
+
+  try {
+    let resposta = await fetch('/usuarios')
+    if (!resposta.ok) {
+      console.erro('Falha no Get trocar foto (1)')
+    }
+    let DadosDosUsuarios = await resposta.json()
+    console.log('DADOS CARREGADOS', DadosDosUsuarios)
+    let DadosUsuarioLogado = DadosDosUsuarios.find(DadosDosUsuarios => DadosDosUsuarios.id == userLogado)
+    let idUsuarioLogado = DadosUsuarioLogado.id
+
+    const trocadefoto = {
+      fotodeperfil: fotoinserida
+    }
+
+    let resposta2 = await fetch(`/usuarios/${idUsuarioLogado}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(trocadefoto)
+    });
+    if (!resposta2.ok){
+      console.erro('Falha no Patch Trocar Foto')
+    }
+    console.log('respota 2 : ok')
+  }
+
+  catch (erro) {
+    console.error('falha na função de trocar foto', erro)
+  }
+
+  CarregarDadosPerfil()
+
 }
 

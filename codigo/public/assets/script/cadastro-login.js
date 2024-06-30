@@ -2,8 +2,11 @@ async function cadastrar() {
     var email = document.getElementById('email').value;
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
+    var telefone = document.getElementById('telefone').value;
+    var nascimento = document.getElementById('nascimento').value;
+    var genero = document.getElementById('genero').value;
 
-    if (email.trim() === '' || username.trim() === '' || password.trim() === '') {
+    if (email.trim() === '' || username.trim() === '' || password.trim() === ''|| telefone.trim() === ''|| nascimento.trim() === ''|| genero.trim() === '') {
         alert('Por favor, preencha todos os campos.');
         return;
     }
@@ -22,7 +25,11 @@ async function cadastrar() {
         const postdadoscadastro = {
             nome: username,
             senha: password,
-            email: email
+            email: email,
+            telefone: telefone,
+            nascimento: nascimento,
+            genero: genero,
+            fotodeperfil: '/assets/images/perfil.jpg'
         }
         try {
             let respostaPost = await fetch('/usuarios' ,{
