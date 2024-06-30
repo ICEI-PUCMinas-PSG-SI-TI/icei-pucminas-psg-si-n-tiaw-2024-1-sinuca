@@ -39,31 +39,73 @@
       "login": "admin",
       "nome": "Guilherme",
       "senha": "admin",
-      "email": "gui@gmail.com"
+      "email": "gui@gmail.com",
+      "telefone": "(31) 992242221",
+      "nascimento": "2005-06-20",
+      "genero": "Masculino",
+      "fotodeperfil": "/assets/images/perfil.jpg"
     },
     {
       "nome": "João",
       "senha": "222",
       "email": "joao@gmail.com",
-      "id": 2
+      "id": 2,
+      "telefone": "(31) 44431212",
+      "nascimento": "1998-03-15",
+      "genero": "Masculino",
+      "fotodeperfil": "/assets/images/perfil.jpg"
     },
     {
       "nome": "Sergio",
       "senha": "333",
       "email": "sergio@gmail",
-      "id": 3
+      "id": 3,
+      "telefone": "(31) 1233312",
+      "nascimento": "1978-06-11",
+      "genero": "Masculino",
+      "fotodeperfil": "/assets/images/perfil.jpg"
     },
     {
       "nome": "Carlos",
       "senha": "444",
       "email": "carlos@gmail",
-      "id": 4
+      "id": 4,
+      "telefone": "(31) 44322122",
+      "nascimento": "1978-12-20",
+      "genero": "Masculino",
+      "fotodeperfil": "/assets/images/perfil.jpg"
     },
     {
       "nome": "Paulete",
       "senha": "macaco",
       "email": "paulo@gmail.com",
-      "id": 5
+      "id": 5,
+      "telefone": "(31) 4445675",
+      "nascimento": "1967-08-14",
+      "genero": "Masculino",
+      "fotodeperfil": "/assets/images/perfil.jpg"
+    },
+    {
+      "nome": "Pudim",
+      "senha": "pudim111",
+      "email": "pudim@gmail.com",
+      "telefone": "(31) 99998888",
+      "nascimento": "2005-06-20",
+      "genero": "Masculino",
+      "id": 6,
+      "fotodeperfil": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/d4ad40103067131.5f450dd53ccd1.png"
+    }
+  ],
+  "torneiosprivados": [
+    {
+      "titulo": "a",
+      "endereco": "a",
+      "cep": "a",
+      "data": "2222-02-22",
+      "maximopessoas": "6",
+      "horario": "20:00",
+      "convidados": [],
+      "id": 1
     }
   ]
 }
