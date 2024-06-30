@@ -7,6 +7,7 @@
     <title>Cadastro do Estabelecimento</title>
     <link rel="stylesheet" href="../assets/css/estabelecimento.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 
 </head>
 
@@ -19,20 +20,18 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-            <ul class="nav-list">
+            <ul class="nav-list" id="cadastro-login">
                 <li><a href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
-                <li><a href="../marcartorneio/marcatorneio.html" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
-                <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+               <li><a href="../torneioprivado/torneioprivado.html" style="color: #fff; text-decoration:none">Marcar Torneio Privado</a></li>
+                 <!--<li><a href="#" style="color: #fff; text-decoration:none">Marcar Torneio Público</a></li>-->
                 <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
-                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
-                <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-                <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Saiba Mais</a></li>     
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="cadastro-form">
+        <section class="cadastro-form" >
             <h1>Cadastrar Estabelecimento</h1>
             <div class="form-container">
                 <div class="cadastro-info">
@@ -96,6 +95,8 @@
 
     <script src="../assets/script/estabelecimento.js"></script>
     <script src="../assets/script/navbar.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
 
 </body>
 

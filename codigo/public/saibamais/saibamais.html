@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/saibamais.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
-    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 </head>
 
 
@@ -24,14 +24,12 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-            <ul class="nav-list">
+            <ul class="nav-list" id="cadastro-login">
                 <li><a href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
-                <li><a href="../marcartorneio/marcatorneio.html" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
-                <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+               <li><a href="../torneioprivado/torneioprivado.html" style="color: #fff; text-decoration:none">Marcar Torneio Privado</a></li>
+                 <!--<li><a href="#" style="color: #fff; text-decoration:none">Marcar Torneio Público</a></li>-->
                 <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
-                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
-                <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-                <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Saiba Mais</a></li>     
             </ul>
         </nav>
     </header>
@@ -83,6 +81,8 @@
 
     <script src="../assets/script/saibamais.js"></script>
     <script src="../assets/script/navbar.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

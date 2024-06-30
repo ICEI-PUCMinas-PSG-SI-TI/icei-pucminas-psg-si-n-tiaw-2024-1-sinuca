@@ -1,38 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="../assets/css/cadastro.css" />
+    <link rel="stylesheet" href="../assets/css/cadastro.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <title>cadastro</title>
 </head>
+
 <body>
 
     <div class="img-logo">
 
-        <a href="../index.html">  <img src="../assets/images/logo.png"></a>
+        <a href="../index.html"> <img src="../assets/images/logo.png"></a>
 
     </div>
 
-    <div class = "form">
+    <div class="form">
 
-    <form>
-        <h3>CADASTRO</h3>
-        <input type="email" placeholder="email" id="email">
-        <input type="text" placeholder="usuário" id="username">
-        <input type="password" placeholder="senha" id="password">
-        <button type="button" onclick="cadastrar()">cadastrar</button>
-        
+        <form>
+            <h3>CADASTRO</h3>
+            <input type="email" placeholder="email" id="email">
+            <input type="text" placeholder="nome de usuário" id="username">
+            <input type="password" placeholder="senha" id="password">
+            <input type="tel" placeholder="telefone" id="telefone">
+            <input type="date" placeholder="data de nascimento" id="nascimento">
+            <div id="divgenero">
+                <label for="genero">Gênero:</label>
+                <select id="genero">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            <button type="button" onclick="cadastrar()">cadastrar</button>
 
-        
-    </form>
-    
-</div>
-    
+        </form>
+
+    </div>
+
 </body>
 <script src="../assets/script/cadastro-login.js"></script>
+
 </html>

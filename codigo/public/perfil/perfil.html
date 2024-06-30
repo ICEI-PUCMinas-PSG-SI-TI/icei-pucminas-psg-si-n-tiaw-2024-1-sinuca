@@ -7,9 +7,10 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="../assets/css/perfil.css">
     <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
 </head>
 
-<body>
+<body onload=CarregarDadosPerfil()>
     <header>
         <nav>
             <a href="../index.html" class="logo"><img src="../assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
@@ -18,14 +19,12 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
-            <ul class="nav-list">
+            <ul class="nav-list" id="cadastro-login">
                 <li><a href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
-                <li><a href="../marcartorneio/marcatorneio.html" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
-                <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
+               <li><a href="../torneioprivado/torneioprivado.html" style="color: #fff; text-decoration:none">Marcar Torneio Privado</a></li>
+                 <!--<li><a href="#" style="color: #fff; text-decoration:none">Marcar Torneio Público</a></li>-->
                 <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
-                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
-                <li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-                <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>
+                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Saiba Mais</a></li>     
             </ul>
         </nav>
     </header>
@@ -33,36 +32,22 @@
     <main class="container">
         <section class="profile">
             <div class="profile-picture">
-                <img src="../assets/images/perfil.jpg" alt="Foto de Perfil">
-                <input type="text" id="name" placeholder="Digite seu nome" value="">
+                <a href="#"><img src="../assets/images/perfil.jpg" onclick=TrocarFoto() alt="Foto de Perfil" id="fotodeperfil"></a>
+                <h3 id="nomedeusuario"></h3>
             </div>
             <div class="profile-info">
-                <div class="info-field">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" value="">
+                <div class="info-field" id="emaildousuario">
+                    
                 </div>
-                <div class="info-field">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="phone" value="">
+                <div class="info-field" id="telefonedousuario">
+                    
                 </div>
-                <div class="info-field">
-                    <label for="nascimento">Data de nascimento:</label>
-                    <input type="date" id="birthdate" value="">
+                <div class="info-field" id="datanascimento">
+                    
                 </div>
-                <div class="info-field">
-                    <label for="genero">Gênero:</label>
-                    <select id="gender">
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                    </select>
+                <div class="info-field" id="generodousuario">
+                    
                 </div>
-                <div class="info-field">
-                    <label for="descricao">Descrição:</label>
-                    <textarea id="description" rows="4"></textarea>
-                </div>
-                <button id="saveProfile">Salvar Perfil</button>
             </div>
         </section>
 
@@ -75,6 +60,7 @@
 
     <script src="../assets/script/perfil.js"></script>
     <script src="../assets/script/navbar.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
 </body>
 
 </html>
