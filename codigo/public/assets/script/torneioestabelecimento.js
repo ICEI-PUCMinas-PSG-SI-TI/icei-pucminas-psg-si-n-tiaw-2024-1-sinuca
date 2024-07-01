@@ -21,7 +21,24 @@ function getQueryParams() {
 });
 
 
-
+async function DadosDaPágina(){
+  let titulodoestabelecimento = document.getElementById('titulodoestabelecimento')
+  const userInfo = getQueryParams();
+  try{
+    let resposta = await fetch('/estabelecimentos')
+    if (!resposta.ok){
+      console.error('Falha no Get Estabelecimento')
+    }
+    let dadosdoestabelecimento = await resposta.json()
+    console.log('dados = ', dadosdoestabelecimento)
+    let estabelecimentoAtual = dadosdoestabelecimento.find(dadosdoestabelecimento => dadosdoestabelecimento.cnpj == userInfo.id)
+    console.log('Atual = ', estabelecimentoAtual)
+    titulodoestabelecimento.innerHTML = estabelecimentoAtual.nome
+  }
+  catch(erro){
+    console.error('Erro na função Try', erro)
+  }
+}
 
 
 
@@ -94,3 +111,19 @@ function preencherCards() {
   }
   
   preencherCards();
+
+
+
+  function IrParaCriacaoTorneioPublico(){
+
+
+    const userInfo = getQueryParams();
+    let cnpjEstabelecimento = userInfo.id
+
+    const params = new URLSearchParams({
+      id: cnpjEstabelecimento
+    })
+    
+    window.location.href = `../torneiopublico/torneiopublico.html?${params.toString()}`;
+
+  }
