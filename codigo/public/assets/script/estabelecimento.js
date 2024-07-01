@@ -1,4 +1,114 @@
-function exibirJSON(objeto) {
+
+
+
+async function CadastroEstabelecimento(){
+
+  let nomeestabelecimento = document.getElementById('nome-estabelecimento').value
+  let endereco = document.getElementById('endereco').value
+  let cep = document.getElementById('cep').value
+  let senha = document.getElementById('senha').value
+  let email = document.getElementById('email').value
+  let cnpj = document.getElementById('cnpj').value
+  let contatoproprietario = document.getElementById('contato-proprietario').value
+  let capacidadepessoas = document.getElementById('capacidade-pessoas').value
+  let horariofuncionamento = document.getElementById('horario-funcionamento').value
+  let descricao = document.getElementById('descricao').value
+  let instagram = document.getElementById('instagram').value
+  let whatsapp = document.getElementById('whatsapp').value
+
+  if (nomeestabelecimento.trim() === '' || endereco.trim() === '' || cep.trim() === ''|| email.trim() === ''|| cnpj.trim() === ''|| contatoproprietario.trim() === '' || capacidadepessoas.trim() === ''|| horariofuncionamento.trim() === ''|| descricao.trim() === '') {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+}
+
+  let novoestabelecimento = {
+    nome: nomeestabelecimento,
+    endereco: endereco,
+    cep: cep,
+    email: email,
+    cnpj: cnpj,
+    senha: senha,
+    contato: contatoproprietario,
+    capacidade: capacidadepessoas,
+    horario: horariofuncionamento,
+    descricao: descricao,
+    instagram: instagram,
+    whatsapp: whatsapp
+  }
+
+  try{
+    let resposta = await fetch('/estabelecimentos',{
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(novoestabelecimento)})
+
+    if (!resposta.ok){
+      console.error('Falha no Post estabelecimento')
+    }
+
+    
+    
+  }
+  catch (erro) {
+    console.error('Ocorreu um erro:', erro);
+  }
+}
+
+
+async function LoginEstabelecimento(){
+
+  let cnpj = document.getElementById('cnpj').value
+  let senhaestabelecimento = document.getElementById('senhaestabelecimento').value
+
+  if (cnpj.trim() === '' || senhaestabelecimento.trim() === '') {
+    alert('Por favor, preencha todos os campos.');
+    return;
+}
+
+try{
+  let resposta = await fetch('/estabelecimentos')
+  if (!resposta.ok){
+      console.error('Não foi possivel obter estabelecimentos')
+  }
+  let estabelecimentodados = await resposta.json()
+
+
+  let cnpjdoestabelecimento = estabelecimentodados.find(estabelecimentodados => estabelecimentodados.cnpj == cnpj)
+  if (!cnpjdoestabelecimento) {
+      alert('Estabelecimento não cadastrado. Por favor, cadastre-se primeiro.');
+      return;
+  }
+  
+  
+  if (cnpjdoestabelecimento.senha === senhaestabelecimento) {
+      
+      var notification = alertify.notify('LOGADO COM SUCESSO !', 'success', 5, function () { console.log('dismissed'); });
+      window.location.href = '../estabelecimento/torneioestabelecimento.html';
+
+  } else {
+      alert('Senha incorreta. Por favor, tente novamente.');
+  }
+}
+catch(erro)
+{
+  console.log(erro)
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/*function exibirJSON(objeto) {
   console.log(objeto);
 }
 
@@ -74,4 +184,4 @@ const mobileNavbar = new MobileNavbar(
   ".nav-list",
   ".nav-list li",
 );
-mobileNavbar.init();
+mobileNavbar.init();*/

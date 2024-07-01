@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
   margin: 0;
   background-color: #ffffff;
-  color: #fff;
 }
 
 .container {
@@ -134,7 +133,7 @@ nav {
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: #fff;
   color: #ffffff;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 32px;
 }
 

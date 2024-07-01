@@ -12,9 +12,9 @@ ready(function () {
   let user = localStorage.getItem('user')
   let cadastrologin = document.getElementById('cadastro-login')
   if (!user) {
-      alertify.alert('Atenção !', 'Você precisa estar logado para participar de partidas', function () { });
-      alertify.dialog('alert').set({ transition: 'zoom' }).show();
-      cadastrologin.innerHTML += `<li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+    alertify.alert('Atenção !', 'Você precisa estar logado para participar de partidas', function () { });
+    alertify.dialog('alert').set({ transition: 'zoom' }).show();
+    cadastrologin.innerHTML += `<li><button><a href="#" onclick = "cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
               <li><button><a href="#" onclick = "login()" style="color: #fff; text-decoration:none">Login</a></button></li>`
   }
 

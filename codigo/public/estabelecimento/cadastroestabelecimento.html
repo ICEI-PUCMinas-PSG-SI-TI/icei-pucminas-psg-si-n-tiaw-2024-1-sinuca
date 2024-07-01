@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do Estabelecimento</title>
+    <link rel="stylesheet" href="../assets/css/estabelecimento.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo"><img src="../assets/images/Logomarca.png" alt="Logomarca" class="Logomarca"></a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list" id="cadastro-login">
+                <li><a href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
+               <li><a href="../torneioprivado/torneioprivado.html" style="color: #fff; text-decoration:none">Marcar Torneio Privado</a></li>
+                 <!--<li><a href="#" style="color: #fff; text-decoration:none">Marcar Torneio Público</a></li>-->
+                <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
+                <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Saiba Mais</a></li>     
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cadastro-form" >
+            <h1>Cadastrar Estabelecimento</h1>
+            <div class="form-container">
+                <div class="cadastro-info">
+                    <form id="cadastroForm">
+                        <div class="input-group">
+                            <label for="nome-estabelecimento">Nome do estabelecimento</label>
+                            <input type="text" id="nome-estabelecimento" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="text" id="cnpj" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="contato-proprietario">Contato do proprietário</label>
+                            <input type="text" id="contato-proprietario" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="capacidade-pessoas">Capacidade de pessoas</label>
+                            <input type="number" id="capacidade-pessoas" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="horario-funcionamento">Horário de funcionamento</label>
+                            <input type="text" id="horario-funcionamento" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="descricao">Descrição</label>
+                            <textarea id="descricao" required></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="instagram">Instagram (opcional)</label>
+                            <input type="text" id="instagram">
+                        </div>
+                        <div class="input-group">
+                            <label for="whatsapp">WhatsApp (opcional)</label>
+                            <input type="text" id="whatsapp">
+                        </div>
+                        <button type="button" onclick=CadastroEstabelecimento()>Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/script/estabelecimento.js"></script>
+    <script src="../assets/script/navbar.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+
+</body>
+
+</html>

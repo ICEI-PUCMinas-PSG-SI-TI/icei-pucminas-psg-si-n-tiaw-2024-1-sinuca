@@ -211,7 +211,7 @@ async function lerFormulario() {
 
     // Exibe a string JSON no console 
     console.log(dadosFormularioJSON);*/
-}
+
 //fim array ler formulário
 
 /*async function lerConvidado() {

@@ -18,6 +18,15 @@ function cadastro() {
 function login() {
     window.location.href = '../login/login.html';
 }
+function estabelecimento(id) {
+  if (id == 'cadastroEstabelecimento') {
+      window.location.href = '../estabelecimento/cadastroestabelecimento.html'
+  }
+  else if (id == 'loginEstabelecimento'){
+      window.location.href = '../estabelecimento/loginestabelecimento.html'
+  }
+  else {alert('Erro')}
+}
 
 //SCRIPT DO CARROSSEL DE CARDS
 

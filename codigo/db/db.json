@@ -110,5 +110,22 @@
   ],
   "torneiospublicos":[
     
+  ],
+  "estabelecimentos": [
+    {
+      "nome": "a",
+      "endereco": "a",
+      "cep": "a",
+      "senha": "123",
+      "email": "a",
+      "cnpj": "a",
+      "contato": "a",
+      "capacidade": "11",
+      "horario": "a",
+      "descricao": "a",
+      "instagram": "a",
+      "whatsapp": "a",
+      "id": 1
+    }
   ]
 }
