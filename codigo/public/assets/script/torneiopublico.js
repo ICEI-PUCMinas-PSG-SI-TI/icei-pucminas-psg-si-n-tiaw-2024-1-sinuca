@@ -1,13 +1,32 @@
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    return { id };
+  }
+
+
+
 async function lerFormulario() {
     try {
+        let getcep = await fetch('/estabelecimentos')
+        let dadosestabelcimento = await getcep.json()
+        const cnpjAtual = getQueryParams();
+        let AtualEstabelecimento = dadosestabelcimento.find(dadosestabelcimento => dadosestabelcimento.cnpj == cnpjAtual.id)
+        let CepAtual = AtualEstabelecimento.cep
+
+
+
+
+
+
+
         let titulopartida = document.getElementById('nome-partida').value;
-        let endereco = document.getElementById('endereco').value;
-        let cep = document.getElementById('cep').value;
+        let endereco = AtualEstabelecimento.endereco;
+        let cep = CepAtual;
         let data = document.getElementById('data').value;
         let maximo = document.getElementById('maximo').value;
         let horario = document.getElementById('horario').value;
-        let telefone = document.getElementById('telefone').value;
-        let email = document.getElementById('email').value;
+
 
         let respostaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         if (!respostaCEP.ok) {
@@ -16,7 +35,6 @@ async function lerFormulario() {
 
         let dadosCEP = await respostaCEP.json();
 
-        document.getElementById('endereco').value = `${dadosCEP.logradouro}, ${dadosCEP.bairro}`;
 
 
         let enderecoCompleto = `${dadosCEP.logradouro}, ${dadosCEP.localidade}, ${dadosCEP.uf}`;
@@ -35,6 +53,7 @@ async function lerFormulario() {
             titulo: titulopartida,
             endereco: endereco,
             cep: cep,
+            cnpj: cnpjAtual.id,
             data: data,
             maximopessoas: maximo,
             horario: horario,
@@ -56,7 +75,8 @@ async function lerFormulario() {
             throw new Error('Erro ao fazer o POST dos dados do torneio');
         } else {
             alert('Torneio criado com sucesso!');
-            document.getElementById('form-partida').reset();
+            document.getElementById('form-partida').reset()
+            window.location=document.referrer;
         }
 
     } catch (erro) {

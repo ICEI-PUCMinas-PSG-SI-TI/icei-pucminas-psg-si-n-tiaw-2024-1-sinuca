@@ -8,7 +8,7 @@ function ready(fn) {
 
   }
 }
-ready(function () {
+ready(async function () {
   let user = localStorage.getItem('user')
   let cadastrologin = document.getElementById('cadastro-login')
   if (!user) {
@@ -18,10 +18,30 @@ ready(function () {
   if (user){
     let cadastrobtn = document.getElementById('cadastrobtn')
     let loginbtn = document.getElementById('loginbtn')
+    let deslogarbtn = document.getElementById('deslogarbtn')
     console.log('tem user')
     cadastrobtn.style.display = 'none'
     loginbtn.style.display = 'none'
+    deslogarbtn.style.display = 'inline-block'
+    try{
+      let resposta = await fetch('/usuarios')
+      if(!resposta.ok){
+        console.error('Falha ao pegar /usuarios')
+      }
+      let dadosUsuarios = await resposta.json()
+      let usuariologado = dadosUsuarios.find(dadosUsuarios => dadosUsuarios.id == user)
+      let perfilnavbar = document.getElementById('perfilnavbar')
+      perfilnavbar.innerHTML = usuariologado.nome
+
+
   }
+  catch(erro){console.error('Erro na mudança de dados navbar', erro)}
+  }
+
+
+
+  
+
 
 })
 

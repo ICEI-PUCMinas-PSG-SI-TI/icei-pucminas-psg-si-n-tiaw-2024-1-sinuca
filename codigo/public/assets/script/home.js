@@ -18,6 +18,12 @@ function cadastro() {
 function login() {
     window.location.href = '../login/login.html';
 }
+
+function deslogar(){
+  localStorage.clear();
+  location.reload()
+}
+
 function estabelecimento(id) {
   if (id == 'cadastroEstabelecimento') {
       window.location.href = '../estabelecimento/cadastroestabelecimento.html'
@@ -68,7 +74,7 @@ function preencherCards() {
               <div class="swiper-slide">
                   <div class="col pt-4">
                       <div class="card">
-                          <div class="card-body">
+                          <div class="card-body text-center">
                               <h5 class="card-title text-light">${partida.titulo}</h5>
                               <h6 class="card-subtitle mb-2 text-light">${partida.endereco || ''}</h6>
                               <p class="card-text text-light">
@@ -79,7 +85,9 @@ function preencherCards() {
                                   Horário: ${partida.horario}<br>
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
-                              <a class="botaoParticipar btn btn-primary mx-3" href="/detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
+                              <div class="d-flex justify-content-center">
+                              <a class="botaoParticipar btn btn-primary d-flex justify-content-center text-center" href="/detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -130,7 +138,7 @@ function preencherCards() {
               <div class="swiper-slide">
                   <div class="col pt-4">
                       <div class="card">
-                          <div class="card-body">
+                          <div class="card-body text-center">
                               <h5 class="card-title text-light">${partida.titulo}</h5>
                               <h6 class="card-subtitle mb-2 text-light">${partida.endereco || ''}</h6>
                               <p class="card-text text-light">
@@ -141,7 +149,10 @@ function preencherCards() {
                                   Horário: ${partida.horario}<br>
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
-                              <a class="botaoParticipar btn btn-primary mx-3" href="/mostrartorneioprivado/mostrartorneioprivado.html?id=${partida.id}" role="button">Detalhes</a>
+                              <div class="d-flex justify-content-center">
+                              <a class="botaoParticipar btn btn-primary" href="/mostrartorneioprivado/mostrartorneioprivado.html?id=${partida.id}" role="button">Detalhes</a>
+                              </div>
+                              
                           </div>
                       </div>
                   </div>

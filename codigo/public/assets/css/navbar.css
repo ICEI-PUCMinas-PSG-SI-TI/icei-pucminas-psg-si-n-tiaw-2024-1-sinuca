@@ -20,6 +20,10 @@
     background:#00603A;
     height: 15vh;
   }
+
+  #deslogarbtn{
+    display: none;
+  }
   
   
   .nav-list {

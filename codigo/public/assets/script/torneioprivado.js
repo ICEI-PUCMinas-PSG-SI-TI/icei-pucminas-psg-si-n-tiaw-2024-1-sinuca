@@ -106,11 +106,16 @@ async function lerFormulario() {
    catch (erro) {
     console.error('Ocorreu um erro:', erro);
   }*/
+
+ 
+
+
 async function lerFormulario() {
     try {
         let titulopartida = document.getElementById('titulopartida').value;
         let endereco = document.getElementById('endereco').value;
-        let cep = document.getElementById('cep').value;
+        let cep = document.getElementById('cep').value
+        console.log('cep = ',cep)
         let data = document.getElementById('data').value;
         let maximo = document.getElementById('maximo').value;
         let horario = document.getElementById('horario').value;
