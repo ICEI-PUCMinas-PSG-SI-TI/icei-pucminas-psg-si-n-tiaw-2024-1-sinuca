@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body onload=DadosDaPágina()>
     <header>
         <nav>
             <a href="../index.html" class="logo"><img src="../assets/images/Logomarca.png" alt="Logomarca"
@@ -55,7 +55,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <h1 style="color: #06945C;">Meus Torneios</h1>
+                <h1 style="color: #06945C;" id="titulodoestabelecimento"></h1>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper publicas">
 
@@ -63,6 +63,14 @@
                     <div class="swiper-pagination "></div>
                 </div>
             </div>
+        </div>
+        <div>
+            <button type="button" onclick=IrParaCriacaoTorneioPublico() class="btn position-absolute bottom-20 end-0 m-5 p-3 btn-success rounded-pill">
+                <div class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                      </svg>   Criar Partida Pública
+            </div></button>
         </div>
     </main>
     <script src="../assets/script/torneioestabelecimento.js"></script>
