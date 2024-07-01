@@ -57,12 +57,10 @@ function preencherCards() {
   
         const criarCard = (partida) => {
             const descricaoListItems = (partida.lista || []).map(item => `<li>${item}</li>`).join('');
-          
             // Calcular o número de pessoas participando
             const numeroParticipantes = partida.convidados ? partida.convidados.length : 0;
             const maximoPessoas = parseInt(partida.maximopessoas);
           
-
           
             return `
               <div class="swiper-slide">

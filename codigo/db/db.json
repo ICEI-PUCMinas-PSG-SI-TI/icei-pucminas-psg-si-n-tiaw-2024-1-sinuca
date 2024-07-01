@@ -109,23 +109,70 @@
     }
   ],
   "torneiospublicos":[
-    
+    {
+      "titulo": "primeirotorneio",
+      "endereco": "putaquepariu",
+      "cep": "312213",
+      "cnpj": "105",
+      "data": "2222-02-22",
+      "maximopessoas": "6",
+      "horario": "20:00",
+      "convidados": [],
+      "id": 1
+    },
+    {
+      "titulo": "inferno",
+      "endereco": "a",
+      "cep": "a",
+      "cnpj": "233",
+      "data": "2222-02-22",
+      "maximopessoas": "6",
+      "horario": "20:00",
+      "convidados": [],
+      "id": 2
+    },
+    {
+      "titulo": "segundotorneio",
+      "endereco": "cada da joana",
+      "cep": "312",
+      "cnpj": "105",
+      "data": "2222-02-22",
+      "maximopessoas": "6",
+      "horario": "20:00",
+      "convidados": [],
+      "id": 3
+    }
   ],
   "estabelecimentos": [
     {
-      "nome": "a",
-      "endereco": "a",
-      "cep": "a",
+      "nome": "bar do seu ze",
+      "endereco": "pucminas",
+      "cep": "22312",
       "senha": "123",
-      "email": "a",
-      "cnpj": "a",
-      "contato": "a",
-      "capacidade": "11",
-      "horario": "a",
-      "descricao": "a",
-      "instagram": "a",
-      "whatsapp": "a",
+      "email": "zezao@gmail.com",
+      "cnpj": "105",
+      "contato": "23323213223",
+      "capacidade": "12",
+      "horario": "12:00",
+      "descricao": "salve",
+      "instagram": "@zezao",
+      "whatsapp": "31992924",
       "id": 1
+    },
+    {
+      "nome": "boteco arrombado",
+      "endereco": "rio de janeiro",
+      "cep": "3123",
+      "senha": "555",
+      "email": "arrom@gmail.com",
+      "cnpj": "233",
+      "contato": "2122221",
+      "capacidade": "12",
+      "horario": "12:00",
+      "descricao": "se isso funcionar dou meu cu",
+      "instagram": "@arrom",
+      "whatsapp": "3122223",
+      "id": 2
     }
   ]
 }

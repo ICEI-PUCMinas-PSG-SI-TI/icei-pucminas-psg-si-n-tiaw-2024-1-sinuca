@@ -74,18 +74,23 @@ try{
   }
   let estabelecimentodados = await resposta.json()
 
-
-  let cnpjdoestabelecimento = estabelecimentodados.find(estabelecimentodados => estabelecimentodados.cnpj == cnpj)
-  if (!cnpjdoestabelecimento) {
+  let estabelecimentologado = estabelecimentodados.find(estabelecimentodados => estabelecimentodados.cnpj == cnpj)
+  if (!estabelecimentologado) {
       alert('Estabelecimento não cadastrado. Por favor, cadastre-se primeiro.');
       return;
   }
   
-  
-  if (cnpjdoestabelecimento.senha === senhaestabelecimento) {
+  let cnpjdoestabelecimento = estabelecimentologado.cnpj
+  if (estabelecimentologado.senha === senhaestabelecimento) {
       
+      
+      const params = new URLSearchParams({
+        id: cnpjdoestabelecimento
+      })
+      
+      console.log(params.toString())
       var notification = alertify.notify('LOGADO COM SUCESSO !', 'success', 5, function () { console.log('dismissed'); });
-      window.location.href = '../estabelecimento/torneioestabelecimento.html';
+      window.location.href = `../estabelecimento/torneioestabelecimento.html?${params.toString()}`;
 
   } else {
       alert('Senha incorreta. Por favor, tente novamente.');
@@ -98,6 +103,7 @@ catch(erro)
 
 
 }
+
 
 
 

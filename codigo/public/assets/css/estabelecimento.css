@@ -229,3 +229,15 @@ nav {
     margin-top: 32px;
   }
 }
+
+.card-body{
+  background-color: #00603A;
+    border-radius: 5px;
+}
+
+ul li{
+list-style: none;
+color: white;
+padding: 10px;
+
+}
