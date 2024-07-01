@@ -78,7 +78,7 @@ function preencherCards() {
               <div class="swiper-slide">
                   <div class="col pt-4">
                       <div class="card">
-                          <div class="card-body">
+                          <div class="card-body text-center">
                               <h5 class="card-title text-light">${partida.titulo}</h5>
                               <h6 class="card-subtitle mb-2 text-light">${partida.endereco || ''}</h6>
                               <p class="card-text text-light">
@@ -89,7 +89,10 @@ function preencherCards() {
                                   Horário: ${partida.horario}<br>
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
-                              <a class="botaoParticipar btn btn-primary mx-3" href="/detalhespartida/partida.html?id=${partida.idPartida}" role="button">Detalhes</a>
+                              <div class="d-flex justify-content-around mb-2">
+                              <a class="botaoParticipar btn btn-primary d-flex justify-content-space-around text-center" href="/detalhespartida/partida.html?id=${partida.idPartida}" role="button">Detalhes</a>
+                              <button class="btn btn-danger d-flex justify-content-center text-center" id="${partida.id}" onclick=RemoverTorneio(this.id)>Excluir</button>
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -125,5 +128,35 @@ function preencherCards() {
     })
     
     window.location.href = `../torneiopublico/torneiopublico.html?${params.toString()}`;
+
+  }
+
+
+
+  async function RemoverTorneio(id){
+
+    let idDoTorneioASerExcluido = id
+    const containerPublicas = document.querySelector('.swiper-wrapper.publicas');
+
+    if (!confirm('Tem certeza que quer excluir esse torneio?')){
+      console.log('nao excluiu')
+      return
+    }
+
+    try {
+      let resposta = await fetch(`/torneiospublicos/${idDoTorneioASerExcluido}`,{
+        method: 'DELETE'
+      })
+      if (!resposta.ok){
+        console.error('Falha ao deletar torneio')
+      }
+      alert('O Torneio foi excluido com sucesso.')
+      containerPublicas.innerHTML = ''
+      preencherCards()
+    }
+
+    catch(erro){
+      console.error('Falha no try', erro)
+    }
 
   }
