@@ -118,7 +118,6 @@ async function lerFormulario() {
         let email = document.getElementById('email').value;
         let senha = document.getElementById('senha').value;
 
-        // Fetch para obter os dados do CEP
         let respostaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         if (!respostaCEP.ok) {
             throw new Error('Não foi possível obter os dados do CEP');
@@ -126,10 +125,8 @@ async function lerFormulario() {
 
         let dadosCEP = await respostaCEP.json();
 
-        // Preenche os campos de endereço com os dados obtidos do CEP
         document.getElementById('endereco').value = `${dadosCEP.logradouro}, ${dadosCEP.bairro}`;
 
-        // Fetch para obter latitude e longitude do endereço
         let enderecoCompleto = `${dadosCEP.logradouro}, ${dadosCEP.localidade}, ${dadosCEP.uf}`;
         let respostaGeo = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(enderecoCompleto)}`);
         if (!respostaGeo.ok) {
@@ -138,12 +135,10 @@ async function lerFormulario() {
 
         let dadosGeo = await respostaGeo.json();
 
-        // Verifica se foram encontradas coordenadas
         if (dadosGeo.length === 0) {
             throw new Error('Coordenadas geográficas não encontradas para o endereço especificado');
         }
 
-        // Atribui as coordenadas ao objeto de dados do torneio
         const torneiodados = {
             titulo: titulopartida,
             endereco: endereco,
@@ -157,7 +152,6 @@ async function lerFormulario() {
             senha: senha
         };
 
-        // Fetch para enviar os dados do torneio para o servidor
         let respostaTorneio = await fetch('/torneiosprivados', {
             method: 'POST',
             headers: {
@@ -169,8 +163,7 @@ async function lerFormulario() {
         if (!respostaTorneio.ok) {
             throw new Error('Erro ao fazer o POST dos dados do torneio');
         } else {
-            console.log('Torneio criado com sucesso!');
-            // Limpa os campos do formulário após o envio bem-sucedido
+            alert('Torneio criado com sucesso!');
             document.getElementById('form-partida').reset();
         }
 
