@@ -57,10 +57,12 @@ function preencherCards() {
   
         const criarCard = (partida) => {
             const descricaoListItems = (partida.lista || []).map(item => `<li>${item}</li>`).join('');
+          
             // Calcular o número de pessoas participando
             const numeroParticipantes = partida.convidados ? partida.convidados.length : 0;
             const maximoPessoas = parseInt(partida.maximopessoas);
           
+
           
             return `
               <div class="swiper-slide">
@@ -77,7 +79,7 @@ function preencherCards() {
                                   Horário: ${partida.horario}<br>
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
-                              <a class="botaoParticipar btn btn-primary mx-3" href="/detalhespartida/partida.html?id=${partida.idPartida}" role="button">Detalhes</a>
+                              <a class="botaoParticipar btn btn-primary mx-3" href="/detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
                           </div>
                       </div>
                   </div>
@@ -139,7 +141,7 @@ function preencherCards() {
                                   Horário: ${partida.horario}<br>
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
-                              <a class="botaoParticipar btn btn-primary mx-3" href="/detalhespartida/partida.html?id=${partida.idPartida}" role="button">Detalhes</a>
+                              <a class="botaoParticipar btn btn-primary mx-3" href="/mostrartorneioprivado/mostrartorneioprivado.html?id=${partida.id}" role="button">Detalhes</a>
                           </div>
                       </div>
                   </div>
