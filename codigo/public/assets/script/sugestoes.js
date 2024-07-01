@@ -138,6 +138,11 @@ function EnviarComentario() {
     alert('Preencha o campo de sugestão')
     return
   }
+
+  if (!user){
+    alert('Por favor, cadastre para comentar')
+    return;
+  }
  let usuarioID = obterUsuarioPorNome(user)
   async function obterUsuarioPorNome(user) {
     try {
@@ -146,6 +151,10 @@ function EnviarComentario() {
         throw new Error('Erro ao obter usuários');
       }
       let usuarios = await resposta.json();
+      if (user >= usuarios.length){
+        alert('Usuário não encontrado, por favor, faça login novamente')
+    return;
+      }
       let userLogin = usuarios.find(usuario => usuario.id == user);
       let idlogin = userLogin.id
       
@@ -251,7 +260,10 @@ async function DarLike(span) {
   let Parent2 = Parent1.parentElement
   let iddocomentario = Parent2.id
   let usuariologado = localStorage.getItem('user')
-   
+  if (!usuariologado){
+    alert('Por favor, cadastre para dar like')
+    return;
+  }
     try {
       let resposta = await fetch('/comentarios');
       if (!resposta.ok) {
@@ -259,7 +271,7 @@ async function DarLike(span) {
       }
       
       let jsoncomentarios = await resposta.json()
-      let UsuarioADarLike = jsoncomentarios.find(jsoncomentarios => jsoncomentarios.userId == usuariologado)
+      
 
       let DonoDoComentario = jsoncomentarios.find(jsoncomentarios => jsoncomentarios.userId == iddocomentario)
 
@@ -267,10 +279,21 @@ async function DarLike(span) {
 
       let user = localStorage.getItem('user')
 
+      let resposta2 = await fetch('/usuarios')
+      if (!resposta2.ok){
+        throw new Error('Erro ao obter usuários');
+      }
+      let dadosUsuarios = await resposta2.json()
+      console.log('length',dadosUsuarios.length)
+      if (usuariologado >= dadosUsuarios.length){
+        alert('Usuário não encontrado, por favor, faça login novamente')
+    return;
+      }
       
+      let UsuarioADarLike = dadosUsuarios.find(dadosUsuarios => dadosUsuarios.id == usuariologado)
+      console.log('usuario a dar like = ')
 
-
-      let idDoUsuarioLike = UsuarioADarLike.userId
+      let idDoUsuarioLike = UsuarioADarLike.id
       
       
       
