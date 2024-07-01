@@ -296,58 +296,6 @@
       "longitude": -43.9311053,
       "convidados": [],
       "id": 9
-    },
-    {
-      "titulo": "Torneio do Tim (Recem-Nascidos)",
-      "endereco": "Rua dos Carijós, 109 - Centro",
-      "cep": "30120-060",
-      "cnpj": "105",
-      "data": "2222-02-21",
-      "maximopessoas": "12",
-      "horario": "12:22",
-      "latitude": -19.9199467,
-      "longitude": -43.9351965,
-      "convidados": [],
-      "id": 10
-    },
-    {
-      "titulo": "Torneio do Tim (Não nascidos)",
-      "endereco": "Rua dos Carijós, 109 - Centro",
-      "cep": "30120-060",
-      "cnpj": "105",
-      "data": "2222-02-22",
-      "maximopessoas": "12",
-      "horario": "22:22",
-      "latitude": -19.9199467,
-      "longitude": -43.9351965,
-      "convidados": [],
-      "id": 11
-    },
-    {
-      "titulo": "Teste",
-      "endereco": "Rua dos Carijós, 109 - Centro",
-      "cep": "30120-060",
-      "cnpj": "105",
-      "data": "2222-02-22",
-      "maximopessoas": "12",
-      "horario": "22:22",
-      "latitude": -19.9199467,
-      "longitude": -43.9351965,
-      "convidados": [],
-      "id": 12
-    },
-    {
-      "titulo": "Teste2",
-      "endereco": "Rua dos Carijós, 109 - Centro",
-      "cep": "30120-060",
-      "cnpj": "105",
-      "data": "2222-02-22",
-      "maximopessoas": "2",
-      "horario": "22:22",
-      "latitude": -19.9199467,
-      "longitude": -43.9351965,
-      "convidados": [],
-      "id": 13
     }
   ],
   "estabelecimentos": [
