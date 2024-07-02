@@ -18,15 +18,7 @@
       "usuario": "João",
       "conteudo": "Com a plataforma consegui encontrar adversários desafiadores, aprimorar as minhas técnicas e fazer novos amigos. Agora entrar em partidas se tornou algo muito mais fácil.",
       "likes": 556,
-      "likesdados": [
-        {
-          "idLike": 5
-        },
-        {},
-        {},
-        {},
-        {}
-      ]
+      "likesdados": []
     }
   ],
   "usuarios": [
