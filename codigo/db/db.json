@@ -39,7 +39,7 @@
       "telefone": "(31) 992242221",
       "nascimento": "2005-06-20",
       "genero": "Masculino",
-      "fotodeperfil": "/assets/images/perfil.jpg"
+      "fotodeperfil": "https://avatars.githubusercontent.com/u/165672136?v=4"
     },
     {
       "nome": "João",
@@ -104,16 +104,6 @@
   ],
   "torneiosprivados": [
     {
-      "titulo": "a",
-      "endereco": "a",
-      "cep": "a",
-      "data": "2222-02-22",
-      "maximopessoas": "6",
-      "horario": "20:00",
-      "convidados": [],
-      "id": 1
-    },
-    {
       "titulo": "Casa do Gui",
       "endereco": "rua poranga",
       "cep": "30830-100",
@@ -122,7 +112,18 @@
       "horario": "12:00",
       "latitude": -19.9109204,
       "longitude": -43.9981853,
-      "convidados": [],
+      "convidados": [
+        {
+          "id": "1",
+          "nome": "Guilherme",
+          "fotodeperfil": "https://avatars.githubusercontent.com/u/165672136?v=4"
+        },
+        {
+          "id": "6",
+          "nome": "Pudim",
+          "fotodeperfil": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/d4ad40103067131.5f450dd53ccd1.png"
+        }
+      ],
       "senha": "privadin",
       "id": 2
     },

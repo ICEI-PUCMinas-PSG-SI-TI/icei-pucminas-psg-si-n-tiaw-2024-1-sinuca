@@ -31,29 +31,34 @@ async function carregarDetalhesPartida() {
 
 
         const DadosPartida = dados.find(partida => partida.id === parseInt(idPartida));
-            
+
         if (!DadosPartida) {
             throw new Error('Partida não encontrada com o ID fornecido');
         }
 
         let idLogado = localStorage.getItem('user')
         let btnParticipar = document.getElementById('btnParticipar')
-        let JaEstaParticipando = DadosPartida.convidados.find(convidados => convidados.usuarioid == idLogado)
-        if (JaEstaParticipando){
+        let JaEstaParticipando = DadosPartida.convidados.find(convidados => convidados.id == idLogado)
+        if (JaEstaParticipando) {
             btnParticipar.innerText = "Cancelar Participação";
             btnParticipar.style.backgroundColor = 'red';
         }
-        else{
+        else {
             btnParticipar.innerText = "Participar";
-            btnParticipar.style.backgroundColor = ''; 
+            btnParticipar.style.backgroundColor = '';
         }
 
+
+        let convidadosdapartida = DadosPartida.convidados
+        console.log('convidados =', convidadosdapartida.length)
 
         document.getElementById('nomeLocal').innerText = DadosPartida.titulo;
         document.getElementById('descricao').innerText = DadosPartida.endereco;
         document.getElementById('horario').innerText = `Data: ${DadosPartida.data}, Horário: ${DadosPartida.horario}`;
+        for (let i = 0; i < convidadosdapartida.length; i++) {
+            document.getElementById('convidados').innerHTML += `<div class="convidados col-lg-12 mb-3 d-flex align-items-center"><img src="${convidadosdapartida[i].fotodeperfil}"  class="me-2" alt="" width="50px">${convidadosdapartida[i].nome}</div>`;
+        }
         document.getElementById('contato').innerText = `Máximo de pessoas: ${DadosPartida.maximopessoas}`;
-        document.getElementById('senha').innerText = `Senha: ${DadosPartida.senha}`;
 
 
         var map = L.map('map').setView([DadosPartida.latitude, DadosPartida.longitude], 10);
@@ -67,12 +72,12 @@ async function carregarDetalhesPartida() {
             .bindPopup(DadosPartida.titulo)
             .openPopup();
 
-        
+
 
     } catch (error) {
         console.error('Erro ao carregar os detalhes da partida:', error);
         alert("Erro ao carregar os detalhes da partida");
-        window.location.href = "/index.html";
+        // window.location.href = "/index.html";
     }
 }
 
@@ -81,14 +86,25 @@ document.addEventListener('DOMContentLoaded', carregarDetalhesPartida);
 async function ParticiparPartida() {
 
     let idLogado = localStorage.getItem('user')
+
+    if (!idLogado) {
+        alertify.alert('Atenção !', 'Você precisa estar logado para participar de partidas', function () { });
+        alertify.dialog('alert').set({ transition: 'zoom' }).show();
+        return
+    }
+
     try {
         let respostaUsuarios = await fetch(`/usuarios/${idLogado}`)
         if (!respostaUsuarios.ok) {
             console.error('Usuário não encontrado')
         }
         let DadosUsuarios = await respostaUsuarios.json()
-        // let UsuarioLogado = DadosUsuarios.find(DadosUsuarios => DadosUsuarios.id == idLogado)
+        console.log('dadosusuarios = ', DadosUsuarios)
+        //let UsuarioLogado = DadosUsuarios.find(DadosUsuarios => DadosUsuarios.id == idLogado)
         console.log('userlog = ', DadosUsuarios)
+
+        let nomedeusuario = DadosUsuarios.nome
+        let fotodeperfil = DadosUsuarios.fotodeperfil
 
         const idTorneio = getQueryParams()
 
@@ -102,7 +118,7 @@ async function ParticiparPartida() {
         let AddConvidado = DadosTorneio.convidados
         let AddConvidadoJson = JSON.stringify(AddConvidado)
         let AddConvidadoArray = JSON.parse(AddConvidadoJson)
-        AddConvidadoArray.push({ usuarioid: idLogado })
+        AddConvidadoArray.push({ id: idLogado, nome: nomedeusuario, fotodeperfil: fotodeperfil })
 
 
 
@@ -110,20 +126,27 @@ async function ParticiparPartida() {
             convidados: AddConvidadoArray
         }
 
-        let JaEstaParticipando = DadosTorneio.convidados.find(convidados => convidados.usuarioid == idLogado)
-       
-        
-        if (JaEstaParticipando) {
+        let JaEstaParticipando = DadosTorneio.convidados.find(convidados => convidados.id == idLogado)
 
-            let RemoveParticipacao = DadosTorneio.convidados.filter(convidados => convidados.usuarioid !== JaEstaParticipando.usuarioid)
+
+        if (JaEstaParticipando) {
+            console.log('ja ta participando')
+
+            let RemoveParticipacaoID = DadosTorneio.convidados.filter(convidados => convidados.id !== JaEstaParticipando.id)
+            console.log('removeid=', RemoveParticipacaoID)
+
+            RemoveParticipacaoID = DadosTorneio.convidados.filter(convidados => convidados.nome !== JaEstaParticipando.nome)
+            console.log('removenome=', RemoveParticipacaoID)
+            RemoveParticipacaoID = DadosTorneio.convidados.filter(convidados => convidados.fotodeperfil !== JaEstaParticipando.fotodeperfil)
+            console.log('removefoto=', RemoveParticipacaoID)
 
 
             let TiraParticipacao = {
-                convidados: RemoveParticipacao
+                convidados: RemoveParticipacaoID
             }
             alertify.notify('Você cancelou a participação na partida', 'success', 5);
-                btnParticipar.innerText = "Participar";
-                btnParticipar.style.backgroundColor = '';
+            btnParticipar.innerText = "Participar";
+            btnParticipar.style.backgroundColor = '';
 
             const TiraConvidado = await fetch(`/torneiosprivados/${idTorneio.id}`, {
                 method: 'PATCH',
@@ -133,29 +156,68 @@ async function ParticiparPartida() {
                 body: JSON.stringify(TiraParticipacao)
             });
 
-
-
+            RecarregarConvidados()
             return
         }
         alertify.notify('Você está participando da partida', 'success', 5);
-                btnParticipar.innerText = "Cancelar Participação";
-                btnParticipar.style.backgroundColor = 'red';
+        btnParticipar.innerText = "Cancelar Participação";
+        btnParticipar.style.backgroundColor = 'red';
 
-            const NovoConvidado = await fetch(`/torneiosprivados/${idTorneio.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(Convidar)
-            });
+        const NovoConvidado = await fetch(`/torneiosprivados/${idTorneio.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Convidar)
+        });
+
+        RecarregarConvidados()
 
 
-
-       
     }
     catch (erro) { console.error('falha ao participar da partida', erro) }
 
 
+   async function RecarregarConvidados(){
+    document.getElementById('convidados').innerHTML = ''
+    const response = await fetch('/torneiosprivados');
+    if (!response.ok) {
+        throw new Error('Erro ao carregar os dados da partida');
+    }
+    const dados = await response.json();
 
+    console.log('Dados recebidos:', dados);
+
+
+    if (!dados || !Array.isArray(dados)) {
+        throw new Error('Estrutura de dados inválida: torneiospublicos não encontrado');
+    }
+
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const idPartida = urlParams.get('id');
+
+
+    if (!idPartida) {
+        throw new Error('ID da partida não especificado na URL');
+    }
+
+
+    const DadosPartida = dados.find(partida => partida.id === parseInt(idPartida));
+
+    if (!DadosPartida) {
+        throw new Error('Partida não encontrada com o ID fornecido');
+    }
+
+  
+
+    let convidadosdapartida = DadosPartida.convidados
+
+
+
+    for (let i = 0; i < convidadosdapartida.length; i++) {
+        document.getElementById('convidados').innerHTML += `<div class="convidados col-lg-12 mb-3 d-flex align-items-center"><img src="${convidadosdapartida[i].fotodeperfil}"  class="me-2" alt="" width="50px">${convidadosdapartida[i].nome}</div>`;
+    }
+    }
 
 }

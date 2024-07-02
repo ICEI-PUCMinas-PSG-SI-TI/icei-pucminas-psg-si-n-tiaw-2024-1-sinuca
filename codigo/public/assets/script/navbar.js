@@ -46,6 +46,70 @@ ready(async function () {
 })
 
 
+function torneioprivado(){
+  
+  let user = localStorage.getItem('user')
+  if (!user){
+    alertify.alert('Atenção !', 'Você precisa estar logado para participar de partidas', function () { });
+    alertify.dialog('alert').set({ transition: 'zoom' }).show();
+    return
+  }
+  else{
+    window.location = './torneioprivado/torneioprivado.html'
+  }
+  
+}
+
+function perfil(){
+  
+  let user = localStorage.getItem('user')
+  if (!user){
+    alertify.alert('Atenção !', 'Você precisa estar logado para visualizar seu perfil', function () { });
+    alertify.dialog('alert').set({ transition: 'zoom' }).show();
+    return
+  }
+  else{
+    window.location = './perfil/perfil.html'
+  }
+  
+}
+
+function perfil(){
+  
+  let user = localStorage.getItem('user')
+  if (!user){
+    alertify.alert('Atenção !', 'Você precisa estar logado para visualizar seu perfil', function () { });
+    alertify.dialog('alert').set({ transition: 'zoom' }).show();
+    return
+  }
+  else{
+    window.location = './perfil/perfil.html'
+  }
+  
+}
+
+function cadastro() {
+  window.location.href = '../cadastro/cadastro.html';
+}
+function login() {
+  window.location.href = '../login/login.html';
+}
+
+function deslogar(){
+localStorage.clear();
+location.reload()
+}
+
+
+
+
+
+
+
+
+
+
+
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks) {
       this.mobileMenu = document.querySelector(mobileMenu);

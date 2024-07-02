@@ -19,17 +19,19 @@
             <div class="line3"></div>
         </div>
         <ul class="nav-list">
-            <li><a id="perfilnavbar" href="../perfil/perfil.html" style="color: #fff; text-decoration:none">Perfil</a></li>
-            <li><a href="../marcartorneio/marcatorneio.html" style="color: #fff; text-decoration:none">Criar partidas privadas</a></li>
+            <li><a id="perfilnavbar" href="#" onclick=perfil()
+                style="color: #fff; text-decoration:none">Perfil</a></li>
+        <li><a href="#" onclick=torneioprivado() style="color: #fff; text-decoration:none">Marcar
+                Torneio Privado</a></li>
             <li><a href="#" style="color: #fff; text-decoration:none">Partidas anteriores</a></li>
             <li><a href="../tutorial/tutorial.html" style="color: #fff; text-decoration:none">Como jogar</a></li>
             <li><a href="../saibamais/saibamais.html" style="color: #fff; text-decoration:none">Sobre</a></li>
-            <li><button><a href="#" onclick="cadastro()" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-            <li><button><a href="#" onclick="login()" style="color: #fff; text-decoration:none">Login</a></button></li>
-            <li id="cadastrobtn"><button><a href="../cadastro/cadastro.html" style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
-                <li id="loginbtn"><button><a href="../login/login.html" style="color: #fff; text-decoration:none">Login</a></button></li>
-                <li id="deslogarbtn"><button><a href="#" onclick="deslogar()"
-                    style="color: #fff; text-decoration:none">Deslogar</a></button></li>
+            <li id="cadastrobtn"><button onclick="cadastro()"><a href="#" 
+                style="color: #fff; text-decoration:none">Cadastre-se</a></button></li>
+    <li id="loginbtn"><button onclick="login()"><a href="#" 
+                style="color: #fff; text-decoration:none">Login</a></button></li>
+    <li id="deslogarbtn"><button onclick="deslogar()"><a href="#" 
+                style="color: #fff; text-decoration:none">Deslogar</a></button></li>
         </ul>
     </nav>
     </header>

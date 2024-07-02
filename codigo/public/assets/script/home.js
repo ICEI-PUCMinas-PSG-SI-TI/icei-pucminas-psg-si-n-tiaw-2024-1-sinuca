@@ -12,17 +12,7 @@ function ready(fn) {
 }
 
 
-function cadastro() {
-    window.location.href = '../cadastro/cadastro.html';
-}
-function login() {
-    window.location.href = '../login/login.html';
-}
 
-function deslogar(){
-  localStorage.clear();
-  location.reload()
-}
 
 function estabelecimento(id) {
   if (id == 'cadastroEstabelecimento') {
