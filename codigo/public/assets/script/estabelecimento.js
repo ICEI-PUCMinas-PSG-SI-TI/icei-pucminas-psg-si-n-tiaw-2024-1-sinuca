@@ -10,13 +10,11 @@ async function CadastroEstabelecimento(){
   let email = document.getElementById('email').value
   let cnpj = document.getElementById('cnpj').value
   let contatoproprietario = document.getElementById('contato-proprietario').value
-  let capacidadepessoas = document.getElementById('capacidade-pessoas').value
-  let horariofuncionamento = document.getElementById('horario-funcionamento').value
   let descricao = document.getElementById('descricao').value
   let instagram = document.getElementById('instagram').value
   let whatsapp = document.getElementById('whatsapp').value
 
-  if (nomeestabelecimento.trim() === '' || endereco.trim() === '' || cep.trim() === ''|| email.trim() === ''|| cnpj.trim() === ''|| contatoproprietario.trim() === '' || capacidadepessoas.trim() === ''|| horariofuncionamento.trim() === ''|| descricao.trim() === '') {
+  if (nomeestabelecimento.trim() === '' || endereco.trim() === '' || cep.trim() === ''|| email.trim() === ''|| cnpj.trim() === ''|| contatoproprietario.trim() === '' || descricao.trim() === '') {
     alert('Por favor, preencha todos os campos obrigatórios.');
     return;
 }
@@ -25,12 +23,10 @@ async function CadastroEstabelecimento(){
     nome: nomeestabelecimento,
     endereco: endereco,
     cep: cep,
+    senha: senha,
     email: email,
     cnpj: cnpj,
-    senha: senha,
     contato: contatoproprietario,
-    capacidade: capacidadepessoas,
-    horario: horariofuncionamento,
     descricao: descricao,
     instagram: instagram,
     whatsapp: whatsapp
@@ -47,6 +43,10 @@ async function CadastroEstabelecimento(){
     if (!resposta.ok){
       console.error('Falha no Post estabelecimento')
     }
+
+    alert('Estabelecimento cadastrado com sucesso')
+
+    window.location = '../estabelecimento/loginestabelecimento.html'
 
     
     
