@@ -3,18 +3,18 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Henrique
+    given-names: Guilherme
+  - family-names: Fernandes
+    given-names: Gabriel
+  - family-names: Caixeta
+    given-names: Bruno
+  - family-names: De Moro
+    given-names: Caio
+  - family-names: Amaral
+    given-names: Bernardo
+  - family-names: Lucas
+    given-names:Gustao
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: 
