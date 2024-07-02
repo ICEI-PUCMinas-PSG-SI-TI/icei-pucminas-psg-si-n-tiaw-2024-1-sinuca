@@ -70,7 +70,6 @@ fetch("/comentarios")
     }
     }
    
-  //MeusComentarios()
 
 })
 .catch(error => {
@@ -134,7 +133,7 @@ function EnviarComentario() {
   let user = localStorage.getItem('user')
   let novoComentario;
   let camposugestão = document.getElementById('sugestao')
-  if (camposugestão == ''){
+  if (camposugestão.value.trim() === ''){
     alert('Preencha o campo de sugestão')
     return
   }
@@ -201,7 +200,6 @@ function EnviarComentario() {
  
   CarregaComentarioGeral()
 }}
-  // Função para postar um comentário
  
   
   

@@ -13,6 +13,7 @@ function ready(fn) {
 
 
 
+//IR PARA CADASTRO/LOGIN DE ESTABELECIMENTO
 
 function estabelecimento(id) {
   if (id == 'cadastroEstabelecimento') {
@@ -164,7 +165,7 @@ function preencherCards() {
   
   preencherCardsPrivadas();
 
-  
+  //FUNÇÃO PRA MOSTRAR O MODAL DO BOOTSTRAP
   async function MostrarModal(div){
    
     let Parent1 = div.parentElement
@@ -196,7 +197,7 @@ function preencherCards() {
     catch(erro){console.error('Falha no try', erro)}
   }
 
-
+//VALIDA SE A SENHA COLOCADA É A SENHA DO TORNEIO
   async function ValidarSenhaTorneioPrivado(id){
 
     let senhaColocada = document.getElementById('senhapraentrar').value

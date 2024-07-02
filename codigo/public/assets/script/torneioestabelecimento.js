@@ -10,7 +10,7 @@ function getQueryParams() {
   
 
 
-
+//SCRIPT DO SWIPER
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -20,7 +20,7 @@ function getQueryParams() {
     },
 });
 
-
+//COLOCA O NOME DO ESTABELECIMENTO NA PAGINA
 async function DadosDaPágina(){
   let titulodoestabelecimento = document.getElementById('titulodoestabelecimento')
   const userInfo = getQueryParams();
@@ -116,7 +116,7 @@ function preencherCards() {
   preencherCards();
 
 
-
+// FUNÇÃO PRA IR PARA A PÁGINA DE CRIAÇÃO DE TORNEIO PUBLICO
   function IrParaCriacaoTorneioPublico(){
 
 
@@ -132,7 +132,7 @@ function preencherCards() {
   }
 
 
-
+//FUNÇÃO PARA REMOVER TORNEIO
   async function RemoverTorneio(id){
 
     let idDoTorneioASerExcluido = id

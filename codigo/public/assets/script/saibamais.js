@@ -1,3 +1,5 @@
+
+//FUNÇÃO PRA IR PRA CADASTRO/LOGIN
 function cadastro(){
   window.location.href = '/cadastro/cadastro.html';
 }

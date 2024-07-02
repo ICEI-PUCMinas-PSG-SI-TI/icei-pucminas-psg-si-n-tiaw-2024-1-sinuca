@@ -1,3 +1,4 @@
+//CARREGAR PÁGINA
 function ready(fn) {
   if (document.readyState != "loading") {
       fn();
@@ -8,6 +9,7 @@ function ready(fn) {
 
   }
 }
+//FUNÇÃO PARA REMOVER BOTAO DE LOGIN/CADASTRO CASO LOGADO E TROCAR NOME DA ABA PERFIL PELO NOME DA CONTA LOGADA
 ready(async function () {
   let user = localStorage.getItem('user')
   let cadastrologin = document.getElementById('cadastro-login')
@@ -45,7 +47,7 @@ ready(async function () {
 
 })
 
-
+//FUNÇÃO PARA IR PARA TORNEIO PRIVADO
 function torneioprivado(){
   
   let user = localStorage.getItem('user')
@@ -59,7 +61,7 @@ function torneioprivado(){
   }
   
 }
-
+//FUNÇÃO DE IR PARA PÁGINA DE PERFIL
 function perfil(){
   
   let user = localStorage.getItem('user')
@@ -74,20 +76,7 @@ function perfil(){
   
 }
 
-function perfil(){
-  
-  let user = localStorage.getItem('user')
-  if (!user){
-    alertify.alert('Atenção !', 'Você precisa estar logado para visualizar seu perfil', function () { });
-    alertify.dialog('alert').set({ transition: 'zoom' }).show();
-    return
-  }
-  else{
-    window.location = './perfil/perfil.html'
-  }
-  
-}
-
+//IR PARA CADASTRO/LOGIN
 function cadastro() {
   window.location.href = '../cadastro/cadastro.html';
 }
@@ -95,6 +84,7 @@ function login() {
   window.location.href = '../login/login.html';
 }
 
+//FUNÇÃO PARA DESLOGAR DA CONTA
 function deslogar(){
 localStorage.clear();
 location.reload()

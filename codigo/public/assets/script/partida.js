@@ -1,5 +1,5 @@
 
-
+//CARREGA OS DETALHES DA PARTIDA SELECIONADA
 async function carregarDetalhesPartida() {
     try {
 
@@ -71,7 +71,7 @@ async function carregarDetalhesPartida() {
 }
 
 document.addEventListener('DOMContentLoaded', carregarDetalhesPartida);
-
+//FUNCIONALIDADE PARA PARTICIPAR NA PARTIDA 
 async function ParticiparPartida() {
 
     let idLogado = localStorage.getItem('user')
@@ -89,7 +89,6 @@ async function ParticiparPartida() {
         }
         let DadosUsuarios = await respostaUsuarios.json()
         console.log('dadosusuarios = ', DadosUsuarios)
-        //let UsuarioLogado = DadosUsuarios.find(DadosUsuarios => DadosUsuarios.id == idLogado)
         console.log('userlog = ', DadosUsuarios)
 
         let nomedeusuario = DadosUsuarios.nome
@@ -171,7 +170,7 @@ async function ParticiparPartida() {
     }
     catch (erro) { console.error('falha ao participar da partida', erro) }
 
-
+//RECARREGA A LISTA DE CONVIDADOS
    async function RecarregarConvidados(){
     document.getElementById('convidados').innerHTML = ''
     const response = await fetch('/torneiospublicos');

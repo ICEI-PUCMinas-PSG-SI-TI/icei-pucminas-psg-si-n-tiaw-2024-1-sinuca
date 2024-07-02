@@ -1,3 +1,4 @@
+//FUNCTION PRA CADASTRAR PERFIL
 async function cadastrar() {
     var email = document.getElementById('email').value;
     var username = document.getElementById('username').value;
@@ -65,7 +66,7 @@ async function cadastrar() {
 
   
 }
-
+//FUNÇÃO PARA LOGAR NO PERFIL
 async function logar() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;

@@ -1,3 +1,4 @@
+//FUNÇÃO PRA PEGAR OS PARAMETROS DA PAGINA
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
@@ -5,7 +6,7 @@ function getQueryParams() {
   }
 
 
-
+//FUNÇÃO PRA LER OS DADOS E ENVIAR PARA O SERVIDOR
 async function lerFormulario() {
     try {
         let getcep = await fetch('/estabelecimentos')

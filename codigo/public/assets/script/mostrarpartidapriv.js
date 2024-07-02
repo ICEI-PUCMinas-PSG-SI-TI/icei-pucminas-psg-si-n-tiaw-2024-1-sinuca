@@ -1,9 +1,11 @@
+//PEGAR PARAMETROS DA PÁGINA
 function getQueryParams() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     return { id };
 }
 
+//CARREGAR DETALHES DAS PARTIDAS
 async function carregarDetalhesPartida() {
     try {
 
@@ -77,12 +79,12 @@ async function carregarDetalhesPartida() {
     } catch (error) {
         console.error('Erro ao carregar os detalhes da partida:', error);
         alert("Erro ao carregar os detalhes da partida");
-        // window.location.href = "/index.html";
+        window.location.href = "/index.html";
     }
 }
 
 document.addEventListener('DOMContentLoaded', carregarDetalhesPartida);
-
+//FUNÇÃO DE PARTICIPAR DAS PARTIDAS
 async function ParticiparPartida() {
 
     let idLogado = localStorage.getItem('user')
@@ -181,7 +183,7 @@ async function ParticiparPartida() {
     }
     catch (erro) { console.error('falha ao participar da partida', erro) }
 
-
+//FUNÇÃO PARA RECARREGAR A LISTA DE CONVIDADOS
    async function RecarregarConvidados(){
     document.getElementById('convidados').innerHTML = ''
     const response = await fetch('/torneiosprivados');
