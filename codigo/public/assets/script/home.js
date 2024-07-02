@@ -168,6 +168,7 @@ function preencherCards() {
   async function MostrarModal(div){
    
     let Parent1 = div.parentElement
+    console.log('parent 1', Parent1)
     let Parent2 = Parent1.parentElement
     let Parent3 = Parent2.parentElement
     let idTorneio = Parent3.id
