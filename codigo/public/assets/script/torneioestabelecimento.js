@@ -90,7 +90,7 @@ function preencherCards() {
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
                               <div class="d-flex justify-content-around mb-2">
-                              <a class="botaoParticipar btn btn-primary d-flex justify-content-space-around text-center" href="/detalhespartida/partida.html?id=${partida.idPartida}" role="button">Detalhes</a>
+                              <a class="botaoParticipar btn btn-primary d-flex justify-content-space-around text-center" href="../detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
                               <button class="btn btn-danger d-flex justify-content-center text-center" id="${partida.id}" onclick=RemoverTorneio(this.id)>Excluir</button>
                               </div>
                           </div>

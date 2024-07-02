@@ -71,6 +71,20 @@ function perfil(){
     return
   }
   else{
+    window.location = '../perfil/perfil.html'
+  }
+  
+}
+
+function perfilindex(){
+  
+  let user = localStorage.getItem('user')
+  if (!user){
+    alertify.alert('Atenção !', 'Você precisa estar logado para visualizar seu perfil', function () { });
+    alertify.dialog('alert').set({ transition: 'zoom' }).show();
+    return
+  }
+  else{
     window.location = './perfil/perfil.html'
   }
   

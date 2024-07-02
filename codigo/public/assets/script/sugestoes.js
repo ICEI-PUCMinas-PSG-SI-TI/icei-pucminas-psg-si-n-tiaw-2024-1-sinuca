@@ -150,7 +150,7 @@ function EnviarComentario() {
         throw new Error('Erro ao obter usuários');
       }
       let usuarios = await resposta.json();
-      if (user >= usuarios.length){
+      if (user > usuarios.length){
         alert('Usuário não encontrado, por favor, faça login novamente')
     return;
       }
@@ -283,7 +283,7 @@ async function DarLike(span) {
       }
       let dadosUsuarios = await resposta2.json()
       console.log('length',dadosUsuarios.length)
-      if (usuariologado >= dadosUsuarios.length){
+      if (usuariologado > dadosUsuarios.length){
         alert('Usuário não encontrado, por favor, faça login novamente')
     return;
       }
