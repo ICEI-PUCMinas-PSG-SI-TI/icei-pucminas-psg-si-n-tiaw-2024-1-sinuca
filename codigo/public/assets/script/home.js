@@ -86,7 +86,7 @@ function preencherCards() {
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
                               <div class="d-flex justify-content-center">
-                              <a class="botaoParticipar btn btn-primary d-flex justify-content-center text-center" href="/detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
+                              <a class="botaoParticipar btn btn-primary  d-flex justify-content-center text-center" href="/detalhespartida/partida.html?id=${partida.id}" role="button">Detalhes</a>
                               </div>
                           </div>
                       </div>
@@ -137,10 +137,9 @@ function preencherCards() {
             return `
               <div class="swiper-slide">
                   <div class="col pt-4">
-                      <div class="card">
+                      <div class="card" id="${partida.id}">
                           <div class="card-body text-center">
                               <h5 class="card-title text-light">${partida.titulo}</h5>
-                              <h6 class="card-subtitle mb-2 text-light">${partida.endereco || ''}</h6>
                               <p class="card-text text-light">
                                   <ul>${descricaoListItems}</ul>
                               </p>
@@ -150,7 +149,7 @@ function preencherCards() {
                                   Participantes: ${numeroParticipantes} / ${partida.maximopessoas}
                               </p>
                               <div class="d-flex justify-content-center">
-                              <a class="botaoParticipar btn btn-primary" href="/mostrartorneioprivado/mostrartorneioprivado.html?id=${partida.id}" role="button">Detalhes</a>
+                              <a class="botaoParticipar btn btn-primary" onclick=MostrarModal(this) data-bs-toggle="modal" data-bs-target="#PartidaModal" href="/mostrartorneioprivado/mostrartorneioprivado.html?id=${partida.id}" role="button">Detalhes</a>
                               </div>
                               
                           </div>
@@ -176,4 +175,57 @@ function preencherCards() {
   preencherCardsPrivadas();
 
   
-  
+  async function MostrarModal(div){
+   
+    let Parent1 = div.parentElement
+    let Parent2 = Parent1.parentElement
+    let Parent3 = Parent2.parentElement
+    let idTorneio = Parent3.id
+
+    let modal = document.getElementById('modal')
+    let titulomodal = document.getElementById('tituloModal')
+    let novaid = document.getElementById('idtorneio')
+    
+
+    try {
+      let resposta = await fetch('/torneiosprivados')
+      if (!resposta.ok){
+        console.error('Não foi possivel acessar o torneio')
+        return
+      }
+      let dadostorneios = await resposta.json()
+
+      let torneioclicado = dadostorneios.find(dadostorneios => dadostorneios.id == idTorneio)
+      titulomodal.textContent = torneioclicado.titulo
+      novaid.id = torneioclicado.id
+
+
+    }
+
+    catch(erro){console.error('Falha no try', erro)}
+  }
+
+
+  async function ValidarSenhaTorneioPrivado(id){
+
+    let senhaColocada = document.getElementById('senhapraentrar').value
+
+    try{
+      let resposta = await fetch('/torneiosprivados')
+      if (!resposta.ok){
+        console.error('Não foi possivel acessar o torneio')
+        return
+      }
+      let dadostorneios = await resposta.json()
+      let torneioclicado = dadostorneios.find(dadostorneios => dadostorneios.id == id)
+      if (senhaColocada == torneioclicado.senha){
+        window.location = `../mostrartorneioprivado/mostrartorneioprivado.html?id=${torneioclicado.id}`
+      }
+      else{
+        alert('Senha incorreta, tente novamente.')
+      }
+    }
+    catch(erro){console.error('Falha no try', erro)}
+    
+
+  }
