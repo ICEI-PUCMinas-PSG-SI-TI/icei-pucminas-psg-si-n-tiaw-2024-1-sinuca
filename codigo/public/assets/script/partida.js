@@ -1,3 +1,5 @@
+
+
 async function carregarDetalhesPartida() {
     try {
         
@@ -66,3 +68,4 @@ async function carregarDetalhesPartida() {
 }
 
 document.addEventListener('DOMContentLoaded', carregarDetalhesPartida);
+
