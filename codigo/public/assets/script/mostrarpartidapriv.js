@@ -50,7 +50,7 @@ async function carregarDetalhesPartida() {
 
 
         let convidadosdapartida = DadosPartida.convidados
-        console.log('convidados =', convidadosdapartida.length)
+        console.log('convidados =', convidadosdapartida)
 
         document.getElementById('nomeLocal').innerText = DadosPartida.titulo;
         document.getElementById('descricao').innerText = DadosPartida.endereco;
@@ -114,6 +114,10 @@ async function ParticiparPartida() {
         }
         let DadosTorneio = await repostaTorneio.json()
         console.log(DadosTorneio)
+        if (DadosTorneio.convidados.length >= DadosTorneio.maximopessoas){
+            alert('Essa partida ja está cheia')
+            return
+        }
 
         let AddConvidado = DadosTorneio.convidados
         let AddConvidadoJson = JSON.stringify(AddConvidado)
